@@ -1,0 +1,40 @@
+
+$base-color: #7280ff;
+$base-color2: #1c233c;
+$white: #fff;
+$body-color: #999;
+$heading-color: #c7c7c7;
+$star-color: #fc9715;
+$bg-color1: #7280ff;
+$bg-color2: #F7F8FC;
+
+
+$facebook: #0069f7;
+$twitter: #00c6f7;
+$dribbble: #f7007a;
+$google-plus: #d1062c;
+$linkedin: #007bb5;
+
+/* Typography */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Poppins:400,500,600,700&display=swap');
+$body-font: 'Open Sans', sans-serif;
+$heading-font: 'Poppins', sans-serif;
+
+//== font sizes
+$base-font-size: 16px !default;
+$font-size-h1: 60px !default;
+$font-size-h2: 52px !default;
+$font-size-h3: 26px !default;
+$font-size-h4: 22px !default;
+//** Unit-less `line-height` for use in components like buttons.
+$line-height: 1.6 !default;
+// border-radius
+$border-radius-5: 5px !default;
+$border-radius-25: 25px !default;
+$border-radius-3: 3px !default;
+$border-radius-circle: 50% !default;
+//  transition
+$transition: all .3s ease-in;
+$transition-long: all .5s ease-in;
+$box-shadow:  4px 4px 10px rgba(69,65,78,.06);
