@@ -142,7 +142,7 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 
 # RECIPIENT_ADDRESS is used by `leumas.forms.ContactForm.send`
-RECIPIENT_ADDRESS = os.environ.get('RECIPIENT_ADDRESS', 'you@example.com')
+RECIPIENT_ADDRESS = os.environ.get('RECIPIENT_ADDRESS', 'hemodasam@gmail.com')
 
 # Security settings for production
 if not DEBUG:

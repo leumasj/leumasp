@@ -1,7 +1,7 @@
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
-
+from .models import Newsletter
 
 
 class ContactForm(forms.Form):
@@ -39,3 +39,22 @@ class ContactForm(forms.Form):
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[settings.RECIPIENT_ADDRESS]
         )
+
+
+class NewsletterForm(forms.ModelForm):
+    class Meta:
+        model = Newsletter
+        fields = ['email']
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Enter your email...',
+                'required': True,
+            })
+        }
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if Newsletter.objects.filter(email=email, is_active=True).exists():
+            raise forms.ValidationError('This email is already subscribed to our newsletter.')
+        return email

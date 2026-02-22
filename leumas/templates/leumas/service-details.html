@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keyword" content="resume,cv,portfolio,vcard">
-    <title> leumas - CV/Resume/Portfolio </title>
+	<meta name="keyword" content="devops,cloud,services,consulting">
+    <title>{{ service.title }} - Services</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- bootstrap -->
@@ -46,172 +46,535 @@
                     <img src="{% static 'images/about3.jpg' %}" alt="">
                 </a>
                 <div class="name">
-                    Kristen Stewart
+                    Samuel Adomeh
+                </div>
+                <div class="designation">
+                    Senior DevOps Engineer
                 </div>
             </div>
-            <ul id="mainmenu-area">
-                <li>
-                    <a href="{% url 'leumas:leumas-index' %}"><i class="fas fa-home"></i>Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'leumas:leumas-about' %}"><i class="fas fa-user"></i>About</a>
-                </li>
-                <li class="current">
-                    <a href="{% url 'leumas:leumas-services' %}"><i class="fas fa-briefcase"></i>Services</a>
-                </li>
-                <li>
-                    <a href="{% url 'leumas:leumas-index' %}"><i class="fas fa-file-alt"></i>Resume</a>
-                </li>
-                <li>
-                    <a href="{% url 'leumas:leumas-works' %}"><i class="fas fa-layer-group"></i>Portfolio</a>
-                </li>
-                <li>
-                    <a href="{% url 'leumas:leumas-blogs' %}"><i class="fab fa-blogger"></i>Blog</a>
-                </li>
-                <li>
-                    <a href="{% url 'leumas:leumas-contact' %}"><i class="fab fa-whatsapp"></i>Contact</a>
-                </li>
-            </ul>
+            <!--Nav Link area-->
+            <div class="nav-link">
+                <a href="{% url 'leumas:leumas-index' %}" class="smooth-selector" data-section="home">Home</a>
+                <a href="{% url 'leumas:leumas-about' %}" class="smooth-selector" data-section="about">About</a>
+                <a href="{% url 'leumas:leumas-services' %}" class="smooth-selector" data-section="service">Services</a>
+                <a href="{% url 'leumas:leumas-works' %}" class="smooth-selector" data-section="project-gallery">Portfolio</a>
+                <a href="{% url 'leumas:leumas-blogs' %}" class="smooth-selector" data-section="blog">Blog</a>
+                <a href="{% url 'leumas:leumas-contact' %}" class="smooth-selector" data-section="contact">Contact</a>
+            </div>
+            <!-- social icon area -->
+            <div class="social-area">
+                <a href="https://github.com/leumasp" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~015c346a56b09a2a89?viewMode=1" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-upwork"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/samuel-adomeh" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
         </div>
     </div>
-    <!--Main-Menu Area Start-->
+    <!--Main-Menu Area End-->
 
-    <!-- Main Content Area Start -->
+    <!--Main Content Area Start-->
     <div class="main-content">
-        <div class="main-content-inner">
+        <!--Header Area Start-->
+        <header class="header-area">
+            <div class="side-menu-handler">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+        <!--Header Area End-->
 
-            <!-- Service Details Area Start -->
-            <div class="portfolio-details section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="main-image">
-                                <img src="assets/images/service.jpg"
-                                    alt="">
-                            </div>
-                            <div class="content">
-                                <h3 class="title">Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness .</h3>
-                                <div class="sort-dec mb-3">
-                                    Hopes lived by rooms oh in no death house. Contented direction september but end led
-                                    excellent ourselves.
+        <!-- Service Details Area Start -->
+        <section class="service-details-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Back Link -->
+                        <div class="back-link mb-4">
+                            <a href="{% url 'leumas:leumas-index' %}#service" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-arrow-left"></i> Back to Services
+                            </a>
+                        </div>
+
+                        <!-- Service Header -->
+                        <div class="service-header mb-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center mb-3 mb-md-0">
+                                    <img src="{{ service.icon }}" alt="{{ service.title }}" style="width: 100px; height: 100px;">
                                 </div>
-                                <p>Questions explained agreeable preferred strangers too him her son. Set put shyness
-                                    offices his females him distant. Improve has message besides shy himself cheered
-                                    however how son. Quick judge other leave ask first chief her. Indeed or remark
-                                    always silent seemed narrow be. Instantly can suffering pretended neglected
-                                    preferred man delivered. Perhaps fertile brandon do imagine to cordial
-                                    cottage.&nbsp;</p>
-                                <p>Yourself required no at thoughts delicate landlord it be. Branched dashwood do is
-                                    whatever it. Farther be chapter at visited married in it pressed. By distrusts
-                                    procuring be oh frankness existence believing instantly if. Doubtful on an juvenile
-                                    as of servants insisted. Judge why maids led sir whose guest drift her point. Him
-                                    comparison especially friendship was who sufficient attachment favourable how.
-                                    Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more
-                                    why.&nbsp;</p>
+                                <div class="col-md-10">
+                                    <h1 class="service-title mb-2">{{ service.title }}</h1>
+                                    <p class="service-description lead">{{ service.description }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="info service-category">
-                                <div class="heading">
-                                    <h4 class="title">
-                                        My Services
-                                    </h4>
+
+                        <!-- Service Content -->
+                        <div class="service-content">
+                            <div class="row">
+                                <!-- Main Content -->
+                                <div class="col-lg-8">
+                                    <div class="service-details-box">
+                                        {{ service.detailed_description|safe }}
+                                    </div>
                                 </div>
-                                <ul class="service-list">
-                                    <li>
-                                        <a href="#"
-                                            class="service  active "><i class="fas fa-angle-double-right"></i>SEO</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="service "><i
-                                                class="fas fa-angle-double-right"></i>Graphic Design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="service "><i
-                                                class="fas fa-angle-double-right"></i>Digital Marketing</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="service "><i
-                                                class="fas fa-angle-double-right"></i>Amazon AWS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="service "><i
-                                                class="fas fa-angle-double-right"></i>Web Development</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="service "><i
-                                                class="fas fa-angle-double-right"></i>Web Design</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="aside-contact-form">
-                                <div class="heading">
-                                    <h4 class="title">
-                                        Contact Me
-                                    </h4>
-                                </div>
-                                <div class="contact-form">
-                                    <form id="contact-form" method="post"
-                                        action="http://localhost/liveporichoy/sendmail">
-                                        <input type="hidden" name="_token"
-                                            value="RdrKtO7CdUz66WGB4L0jhWt3kDUfTM4scq7iQD5R">
-                                        <div class="controls">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_name" type="text" name="name"
-                                                            class="form-control" placeholder="Name*" required="required"
-                                                            data-error="Name is required.">
-                                                        <div class="help-block with-errors"></div>
+
+                                <!-- Sidebar -->
+                                <div class="col-lg-4">
+                                    <!-- Process -->
+                                    <div class="service-sidebar-box mb-4">
+                                        <h3 class="sidebar-title">Service Process</h3>
+                                        <div class="service-process">
+                                            {% for step in service.process %}
+                                                <div class="process-step">
+                                                    <div class="step-number">{{ forloop.counter }}</div>
+                                                    <div class="step-content">
+                                                        <p>{{ step }}</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_email" type="email" name="email"
-                                                            class="form-control" placeholder="Email*"
-                                                            required="required" data-error="Valid email is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_subject" type="text" name="subject"
-                                                            class="form-control" placeholder="Subject*"
-                                                            required="required" data-error="Subject is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <textarea id="form_message" name="message" class="form-control"
-                                                            placeholder="Message*" rows="7" required="required"
-                                                            data-error="Please,leave us a message."></textarea>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="base-btn1"><span>Send
-                                                            Message</span></button>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
                                         </div>
-                                    </form> <!-- End Contact From -->
+                                    </div>
+
+                                    <!-- Technologies -->
+                                    <div class="service-sidebar-box">
+                                        <h3 class="sidebar-title">Technologies</h3>
+                                        <div class="tech-tags">
+                                            {% for tech in service.technologies %}
+                                                <span class="tech-tag">{{ tech }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <!-- CTA -->
+                                    <div class="service-sidebar-box mt-4">
+                                        <a href="{% url 'leumas:leumas-contact' %}" class="btn btn-primary btn-block mb-3">
+                                            <i class="fas fa-envelope"></i> Get a Quote
+                                        </a>
+                                        <a href="https://www.upwork.com/freelancers/~015c346a56b09a2a89?viewMode=1" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-block">
+                                            <i class="fab fa-upwork"></i> Hire on Upwork
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Services Navigation -->
+                        <div class="other-services mt-5 pt-5 border-top">
+                            <h3 class="mb-4">Other Services</h3>
+                            <div class="row">
+                                {% for other_id, other_service in all_services.items %}
+                                    {% if other_id != service_id and forloop.counter <= 3 %}
+                                        <div class="col-md-4 mb-4">
+                                            <a href="{% url 'leumas:service-detail' other_id %}" class="service-card">
+                                                <div class="service-card-icon text-center mb-3">
+                                                    <img src="{{ other_service.icon }}" alt="{{ other_service.title }}" style="width: 60px; height: 60px;">
+                                                </div>
+                                                <h5 class="service-card-title">{{ other_service.title }}</h5>
+                                                <p class="service-card-description">{{ other_service.description }}</p>
+                                                <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Service Details Area End -->
+        </section>
+        <!-- Service Details Area End -->
 
-        </div>
+        <!-- Footer Area Start -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-content text-center">
+                            <p class="mb-0">&copy; 2026 Samuel Adomeh. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Area End -->
     </div>
-    <!-- Main Content Area End -->
+    <!--Main Content Area End-->
 
+
+    <!-- Styles for Service Details -->
+    <style>
+        .service-details-section {
+            padding: 80px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .back-link {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 10px;
+            color: white;
+            animation: fadeInDown 0.8s ease 0.2s both;
+        }
+
+        .service-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .service-details-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            line-height: 1.8;
+            animation: fadeInLeft 0.8s ease 0.4s both;
+        }
+
+        .service-details-box h3 {
+            color: #333;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .service-details-box h3:first-child {
+            margin-top: 0;
+        }
+
+        .service-details-box p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .service-details-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .service-details-box li {
+            padding-left: 25px;
+            margin-bottom: 8px;
+            position: relative;
+            color: #555;
+        }
+
+        .service-details-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        .service-sidebar-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: fadeInRight 0.8s ease 0.4s both;
+        }
+
+        .sidebar-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* Process Steps */
+        .process-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            min-width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* Tech Tags */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1px solid #667eea;
+        }
+
+        /* Service Card */
+        .service-card {
+            display: block;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+            background: #fff;
+        }
+
+        .service-card-title {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-card-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .read-more {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .other-services h3 {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        /* Button Styles */
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 20px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #764ba2;
+            border-color: #764ba2;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-outline-primary {
+            color: #667eea;
+            border: 2px solid #667eea;
+            background: transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        .btn-outline-primary:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+
+        .border-top {
+            border-top: 2px solid #e9ecef !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .mt-5 {
+            margin-top: 3rem;
+        }
+
+        .pt-5 {
+            padding-top: 3rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -12px;
+            margin-left: -12px;
+        }
+
+        .col-md-4,
+        .col-md-10,
+        .col-md-2,
+        .col-lg-4,
+        .col-lg-8,
+        .col-lg-12 {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+
+        .col-lg-12 {
+            flex: 0 0 100%;
+        }
+
+        .col-lg-8 {
+            flex: 0 0 66.66666667%;
+        }
+
+        .col-lg-4 {
+            flex: 0 0 33.33333333%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 1.8em;
+            }
+
+            .service-header {
+                padding: 25px;
+            }
+
+            .service-sidebar-box {
+                margin-top: 30px;
+            }
+
+            .other-services .row {
+                flex-direction: column;
+            }
+
+            .other-services .col-md-4 {
+                margin-bottom: 20px;
+                flex: 0 0 100%;
+            }
+
+            .col-md-2 {
+                flex: 0 0 16.666667%;
+            }
+
+            .col-md-10 {
+                flex: 0 0 83.333333%;
+            }
+
+            .mb-md-0 {
+                margin-bottom: 0;
+            }
+        }
+    </style>
 
     <!-- Back to Top Start -->
     <div class="bottomtotop">
@@ -219,25 +582,27 @@
     </div>
     <!-- Back to Top End -->
 
-
-
 	<!-- jquery -->
-	<script src="assets/js/jquery.js"></script>
+	<script src="{% static 'js/jquery.js' %}"></script>
 	<!-- popper -->
-	<script src="assets/js/popper.min.js"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
 	<!-- bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!-- plugin js-->
-	<script src="assets/js/plugin.js"></script>
-	<script src="assets/js/jQuery-plugin-progressbar.js"></script>
+	<script src="{% static 'js/plugin.js' %}"></script>
+	<script src="{% static 'js/jQuery-plugin-progressbar.js' %}"></script>
 	<!-- Typed js -->
-	<script src="assets/js/typed.min.js"></script>
+	<script src="{% static 'js/typed.min.js' %}"></script>
 	<!-- buoyant js -->
-	<script src="assets/js/jquery.buoyant.min.js"></script>
+	<script src="{% static 'js/jquery.buoyant.min.js' %}"></script>
 	<!-- Wow js -->
-	<script src="assets/js/wow.js"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
-	<script src="assets/js/main.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        new WOW().init();
+    </script>
 
 </body>
 

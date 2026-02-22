@@ -65,7 +65,7 @@
 					<a href="#about" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fas fa-user"></i>About</a>
 				</li>
 				<li>
-					<a href="#service" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fas fa-briefcase"></i>Services</a>
+					<a href="{% url 'leumas:service-detail' 1 %}" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fas fa-briefcase"></i>Services</a>
 				</li>
 				<li>
 					<a href="#resume" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fas fa-file-alt"></i>Resume</a>
@@ -112,12 +112,12 @@
 									<div class="social-info wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
 										<ul>
 											<li>
-												<a href="#" title="Connect on LinkedIn" aria-label="LinkedIn Profile">
+												<a href="https://www.linkedin.com/in/adomeh" title="Connect on LinkedIn" aria-label="LinkedIn Profile">
 													<i class="fab fa-linkedin-in"></i>
 												</a>
 											</li>
 											<li>
-												<a href="#" title="Visit GitHub" aria-label="GitHub Profile">
+												<a href="https://github.com/leumasj" title="Visit GitHub" aria-label="GitHub Profile">
 													<i class="fab fa-github"></i>
 												</a>
 											</li>
@@ -127,7 +127,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="#" title="View on Upwork" aria-label="Upwork Profile">
+												<a href="https://www.upwork.com/freelancers/~015c346a56b09a2a89?viewMode=1" title="View on Upwork" aria-label="Upwork Profile">
 													<i class="fab fa-upwork"></i>
 												</a>
 											</li>
@@ -211,13 +211,13 @@
 														<span><label>Website:</label> <a href="#">www.mywebsite.com</a></span>
 													</li>
 													<li>
-														<span><label>Mail:</label> <a href="mailto:example@gmail.com">mymail@gmail.com</a></span>
+														<span><label>Mail:</label> <a href="mailto:leumas@null.net">leumas@null.net</a></span>
 													</li>
 													<li>
 														<span><label>Phone:</label> <a href="#">+77 022 177 05 05</a></span>
 													</li>
 													<li>
-														<span><label>Twitter:</label> <a href="#">@myusername</a></span>
+														<span><label>Twitter:</label> <a href="#">@harourr</a></span>
 													</li>
 												</ul>
 											</div>
@@ -299,7 +299,7 @@
 					</div>
 					<div class="row justify-content-center">
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 1 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/024-server.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -312,7 +312,7 @@
 							</a>
 						</div>
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 2 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/062-code-1.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -325,7 +325,7 @@
 							</a>
 						</div>
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 3 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/064-vector.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -338,7 +338,7 @@
 							</a>
 						</div>
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 4 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/043-analytics.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -351,7 +351,7 @@
 							</a>
 						</div>
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 5 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/033-rocket.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -364,7 +364,7 @@
 							</a>
 						</div>
 						<div class="col-lg-4 col-md-6">
-							<a href="service-details.html" class="single-feature wow fadeInUp">
+							<a href="{% url 'leumas:service-detail' 6 %}" class="single-feature wow fadeInUp">
 								<img src="{% static 'images/icon/054-puzzle.png' %}" alt="">
 								<div class="content">
 									<h4 class="title">
@@ -485,11 +485,11 @@
 												Python
 											</h4>
 											<h5 class="value">
-													75%
+													80%
 											</h5>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
 										</div>
 									</div>
 									<div class="single-skill wow fadeInUp">
@@ -498,11 +498,11 @@
 												C#
 											</h4>
 											<h5 class="value">
-													75%
+													65%
 											</h5>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%"></div>
 										</div>
 									</div>
 									<div class="single-skill wow fadeInUp">
@@ -535,11 +535,11 @@
 													Bash/Shell
 												</h4>
 												<h5 class="value">
-														75%
+														89%
 												</h5>
 											</div>
 											<div class="progress">
-												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%"></div>
 											</div>
 										</div>
 										<div class="single-skill wow fadeInUp">
@@ -548,11 +548,11 @@
 														Go
 												</h4>
 												<h5 class="value">
-														75%
+														70%
 												</h5>
 											</div>
 											<div class="progress">
-												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
 											</div>
 										</div>
 										<div class="single-skill wow fadeInUp">
@@ -587,11 +587,11 @@
 														PowerShell
 												</h4>
 												<h5 class="value">
-														75%
+														85%
 												</h5>
 											</div>
 											<div class="progress">
-												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
 											</div>
 										</div>
 									</div>
@@ -611,11 +611,11 @@
 													English
 												</h4>
 												<h5 class="value">
-														75%
+														100%
 												</h5>
 											</div>
 											<div class="progress">
-												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
 											</div>
 										</div>
 									</div>
@@ -819,7 +819,7 @@
 									Enterprise-grade DevOps projects | <a href="https://www.upwork.com/freelancers/~015c346a56b09a2a89?viewMode=1" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none;">View more on Upwork</a>
 								</p>
 								<div class="right-area">
-									<a href="portfolios.html" class="link">View All</a>
+									<a href="{% url 'leumas:leumas-works' %}" class="link">View All</a>
 								</div>
 							</div>
 						</div>
@@ -841,14 +841,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-1 cat-3">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/1e3c72/ffffff?text=Kubernetes+Multi-Cloud" alt="Kubernetes Multi-Cloud Deployment">
+											<img src="{% static 'images/work/1.jpg' %}" alt="Kubernetes Multi-Cloud Deployment">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Kubernetes Multi-Cloud Orchestration</h3>
 													<p style="color: white; margin: 5px 0 10px;">AWS, Azure & GCP K8s Cluster</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/1e3c72/ffffff?text=Kubernetes+Multi-Cloud">
+														<a href="{% url 'leumas:portfolio-detail' 1 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/1.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -861,14 +861,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-2 cat-4">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=GitLab+CI%2FCD" alt="GitLab CI/CD Pipeline">
+											<img src="{% static 'images/work/2.jpg' %}" alt="GitLab CI/CD Pipeline">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Advanced CI/CD Pipeline Architecture</h3>
 													<p style="color: white; margin: 5px 0 10px;">GitLab CI + Docker + Kubernetes</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/2c3e50/ffffff?text=GitLab+CI%2FCD">
+														<a href="{% url 'leumas:portfolio-detail' 2 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/2.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -881,14 +881,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-1 cat-3">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/27ae60/ffffff?text=Terraform+IaC" alt="Infrastructure as Code">
+											<img src="{% static 'images/work/3.jpg' %}" alt="Infrastructure as Code">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Infrastructure as Code (IaC)</h3>
 													<p style="color: white; margin: 5px 0 10px;">Terraform + CloudFormation + Ansible</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/27ae60/ffffff?text=Terraform+IaC">
+														<a href="{% url 'leumas:portfolio-detail' 3 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/3.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -901,14 +901,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-4">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=PowerBI+Analytics" alt="PowerBI Analytics Dashboard">
+											<img src="{% static 'images/work/4.jpg' %}" alt="PowerBI Analytics Dashboard">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">PowerBI Analytics & Dashboards</h3>
 													<p style="color: white; margin: 5px 0 10px;">Real-time Metrics & Reporting</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/e74c3c/ffffff?text=PowerBI+Analytics">
+														<a href="{% url 'leumas:portfolio-detail' 4 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/4.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -921,14 +921,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-1">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Monitoring+%26+Logging" alt="Monitoring and Logging Stack">
+											<img src="{% static 'images/work/5.jpg' %}" alt="Monitoring and Logging Stack">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Enterprise Monitoring Stack</h3>
 													<p style="color: white; margin: 5px 0 10px;">Prometheus, ELK, Datadog Integration</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/3498db/ffffff?text=Monitoring+%26+Logging">
+														<a href="{% url 'leumas:portfolio-detail' 5 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/5.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -941,14 +941,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-4">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/9b59b6/ffffff?text=Google+Apps+Script" alt="Google Apps Script Automation">
+											<img src="{% static 'images/work/6.jpg' %}" alt="Google Apps Script Automation">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Google Apps Script Automation</h3>
 													<p style="color: white; margin: 5px 0 10px;">Sheets, Forms & Business Integration</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/9b59b6/ffffff?text=Google+Apps+Script">
+														<a href="{% url 'leumas:portfolio-detail' 6 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/6.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -961,14 +961,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-3">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/f39c12/ffffff?text=AWS+Migration" alt="AWS Cloud Migration">
+											<img src="{% static 'images/work/7.jpg' %}" alt="AWS Cloud Migration">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Enterprise AWS Migration</h3>
 													<p style="color: white; margin: 5px 0 10px;">Zero-Downtime Cloud Transition</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/f39c12/ffffff?text=AWS+Migration">
+														<a href="{% url 'leumas:portfolio-detail' 7 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/7.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -981,14 +981,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-2">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/1abc9c/ffffff?text=Jenkins+Automation" alt="Jenkins Automation Pipeline">
+											<img src="{% static 'images/work/8.jpg' %}" alt="Jenkins Automation Pipeline">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Jenkins Deployment Automation</h3>
 													<p style="color: white; margin: 5px 0 10px;">Automated Testing & Deployment</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/1abc9c/ffffff?text=Jenkins+Automation">
+														<a href="{% url 'leumas:portfolio-detail' 8 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/8.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -1001,14 +1001,14 @@
 								<div class="mix col-md-6 col-lg-4 gallery-item cat-4">
 									<div class="gallery-item-content wow fadeInUp">
 										<div class="item-thumbnail">
-											<img src="https://via.placeholder.com/400x300/c0392b/ffffff?text=API+Integrations" alt="API Integration Architecture">
+											<img src="{% static 'images/work/9.jpg' %}" alt="API Integration Architecture">
 											<div class="content-overlay">
 												<div class="content">
 													<h3 style="color: white; margin: 0;">Microservices API Integration</h3>
 													<p style="color: white; margin: 5px 0 10px;">REST, gRPC & Event-Driven Architecture</p>
 													<div class="links">
-														<a href="portfolio-details.html" class="link"><i class="fas fa-link"></i></a>
-														<a class="img-popup image-preview" href="https://via.placeholder.com/800x600/c0392b/ffffff?text=API+Integrations">
+														<a href="{% url 'leumas:portfolio-detail' 9 %}" class="link"><i class="fas fa-link"></i></a>
+														<a class="img-popup image-preview" href="{% static 'images/work/9.jpg' %}">
 															<i class="fas fa-eye"></i>
 														</a>
 													</div>
@@ -1177,7 +1177,7 @@
 									<i class="fab fa-blogger"></i> My Blogs
 								</h2>
 								<div class="right-area">
-									<a href="blogs.html" class="link">View All</a>
+									<a href="{% url 'leumas:leumas-blogs' %}" class="link">View All</a>
 								</div>
 							</div>
 						</div>
@@ -1203,7 +1203,7 @@
 													</p>
 												</li>
 											</ul>
-											<a href="blog-details.html">
+											<a href="{% url 'leumas:blog-detail' 1 %}">
 												<h4 class="title">
 													5 reasons why your website
 													needs more whitespace
@@ -1230,7 +1230,7 @@
 													</p>
 												</li>
 											</ul>
-											<a href="blog-details.html">
+											<a href="{% url 'leumas:blog-detail' 2 %}">
 												<h4 class="title">
 													7 steps to optimize your
 													website for Millennials
@@ -1257,7 +1257,7 @@
 													</p>
 												</li>
 											</ul>
-											<a href="blog-details.html">
+											<a href="{% url 'leumas:blog-detail' 3 %}">
 												<h4 class="title">
 													8 Things To Know When Designing
 													Augmented
@@ -1284,7 +1284,7 @@
 													</p>
 												</li>
 											</ul>
-											<a href="blog-details.html">
+											<a href="{% url 'leumas:blog-detail' 4 %}">
 												<h4 class="title">
 													3 reasons why your website
 													needs more whitespace
@@ -1321,7 +1321,7 @@
 								</div>
 								<div class="info-content">
 									<h5>My Location:</h5>
-									<p>700 Oak Street, Brockton MA 2301</p>
+									<p>Wroclaw, 54-233, Poland</p>
 								</div>
 		
 							</div>
@@ -1334,7 +1334,7 @@
 								</div>
 								<div class="info-content">
 									<h5>Phone Number:</h5>
-									<p>+0123 123 856</p>
+									<p>+48 661 910 134</p>
 								</div>
 		
 							</div>
@@ -1348,7 +1348,7 @@
 								</div>
 								<div class="info-contentr">
 									<h5>Email Address:</h5>
-									<p>demomail@gmail.com</p>
+									<p>hemodasam@gmail.com</p>
 								</div>
 							</div>
 						</div>
@@ -1357,7 +1357,8 @@
 						<div class="col-lg-6">
 							<div class="home-page-form">
 								<div class="contact-form">
-									<form id="contact-form"  action="#">							
+									<form id="contact-form" method="POST" action="{% url 'leumas:leumas-contact' %}">							
+										{% csrf_token %}
 										<div class="controls">
 											<div class="row">
 												<div class="col-md-6">
@@ -1376,7 +1377,7 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="form-group">
-													<input id="subject" type="text" name="subject" class="form-control" placeholder="Subject*" required="required" data-error="Subject is required.">
+													<input id="inquiry" type="text" name="inquiry" class="form-control" placeholder="Subject*" required="required" data-error="Subject is required.">
 														<div class="help-block with-errors"></div>
 													</div>
 												</div>
@@ -1400,7 +1401,7 @@
 		
 						<div class="col-lg-6">
 							<div class="google_map_wrapper">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196281.12937357728!2d-104.99519427659213!3d39.76451867231318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b80aa231f17cf%3A0x118ef4f8278a36d6!2sDenver%2C%20CO%2C%20USA!5e0!3m2!1sen!2sbd!4v1592721407423!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d154963.90183632822!2d16.863115815234375!3d51.10793100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fcc7476dcc5fb%3A0x412db2fe30cda20!2sWroclaw%2C%20Poland!5e0!3m2!1sen!2s!4v1645452000000" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 							</div>
 						</div>
 					</div>
@@ -1444,6 +1445,27 @@
 	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
 	<script src="{% static 'js/main.js' %}"></script>
+
+	<!-- Smooth scroll to sections on navigation -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Check if there's a section to scroll to from Django context
+			const scrollTo = '{{ scroll_to }}';
+			
+			if (scrollTo && scrollTo !== '') {
+				// Wait a moment for page to fully render before scrolling
+				setTimeout(function() {
+					const element = document.getElementById(scrollTo);
+					if (element) {
+						element.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				}, 500);
+			}
+		});
+	</script>
 	
 </body>
 

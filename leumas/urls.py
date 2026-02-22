@@ -20,8 +20,11 @@ urlpatterns = [
     path('blog', views.blog, name='leumas-blog'),
     path('blogs', views.blogs, name='leumas-blogs'),
     path('success/', ContactSuccessView.as_view(), name="success"),
-    path('pj', views.pj, name='leumas-pj'),
-
+    path('portfolio/<int:project_id>/', views.portfolio_detail, name='portfolio-detail'),
+    path('service/<int:service_id>/', views.service_detail, name='service-detail'),
+    path('blog/<int:blog_id>/', views.blog_detail, name='blog-detail'),
+    path('subscribe-newsletter/', views.subscribe_newsletter, name='subscribe-newsletter'),
+    path('pj', views.index, name='leumas-pj'),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

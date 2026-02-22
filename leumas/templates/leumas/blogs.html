@@ -85,222 +85,34 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="row">
+                                    {% for blog_id, blog in all_blogs.items %}
                                     <div class="col-lg-6 col-md-6">
                                         <div class="single-blog">
                                             <div class="img">
-                                                <img src="assets/images/blog/img1.png" alt="">
+                                                <img src="{{ blog.image }}" alt="{{ blog.title }}">
                                             </div>
                                             <div class="content">
                                                 <ul class="top-meta">
                                                     <li>
                                                         <p class="date">
-                                                            21 Aug, 2019
+                                                            {{ blog.date }}
                                                         </p>
                                                     </li>
                                                     <li>
                                                         <p class="post-by">
-                                                            By, Admin
+                                                            By, {{ blog.author }}
                                                         </p>
                                                     </li>
                                                 </ul>
-                                                <a href="blog-details.html">
+                                                <a href="{% url 'leumas:blog-detail' blog_id %}">
                                                     <h4 class="title">
-                                                        5 reasons why your website 
-                                                        needs more whitespace
+                                                        {{ blog.title }}
                                                     </h4>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img2.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        7 steps to optimize your 
-                                                        website for Millennials										
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img3.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        8 Things To Know When 
-                                                        Designing Augmented
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img4.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        New Requirements for 2018: Is 
-                                                        Your Website Ready?
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img5.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        A series of iOS 7 inspire 
-                                                        vector Questions Ask icons.
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img6.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        The 5 Real Questions to Ask
-                                                        Potential Web Design Agency
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img1.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        Sed ut perspiciatis unde 
-                                                        omnis iste natus.
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-blog">
-                                            <div class="img">
-                                                <img src="assets/images/blog/img2.png" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <ul class="top-meta">
-                                                    <li>
-                                                        <p class="date">
-                                                            21 Aug, 2019
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="post-by">
-                                                            By, Admin
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                                <a href="blog-details.html">
-                                                    <h4 class="title">
-                                                        6 reasons why your website 
-                                                        needs more whitespace
-                                                    </h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center">
@@ -334,60 +146,60 @@
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Trading
+                                                    Kubernetes
                                                 </p>
                                                 <span class="count">
-                                                33
+                                                1
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Exchange
+                                                    CI/CD
                                                 </p>
                                                 <span class="count">
-                                                    77
+                                                    2
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Guide
+                                                    Observability
                                                 </p>
                                                 <span class="count">
-                                                    49
+                                                    1
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Blockchain
+                                                    Infrastructure
                                                 </p>
                                                 <span class="count">
-                                                    70
+                                                    2
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Crypto
+                                                    Deployment
                                                 </p>
                                                 <span class="count">
-                                                    33
+                                                    1
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <p>
-                                                    Lending
+                                                    Containers
                                                 </p>
                                                 <span class="count">
-                                                    38
+                                                    1
                                                 </span>
                                             </a>
                                         </li>
@@ -395,66 +207,34 @@
                                 </div>
                                 <div class="latest-post-widget">
                                     <h4 class="title">
-                                        Latest Post
+                                        Latest Posts
                                     </h4>
                                     <ul class="post-list">
+                                        {% for blog_id, blog in all_blogs.items|slice:":4" %}
                                         <li>
                                             <div class="post">
                                                 <div class="post-img">
-                                                    <img src="assets/images/blog/img1.png" alt="">
+                                                    <img src="{{ blog.image }}" alt="{{ blog.title }}">
                                                 </div>
                                                 <div class="post-details">
-                                                    <a href="blog-details.html" class="post-title">
-                                                        5 reasons why you website  
+                                                    <a href="{% url 'leumas:blog-detail' blog_id %}" class="post-title">
+                                                        {{ blog.title|truncatewords:10 }}
                                                     </a>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="post">
-                                                <div class="post-img">
-                                                    <img src="assets/images/blog/img2.png" alt="">
-                                                </div>
-                                                <div class="post-details">
-                                                    <a href="blog-details.html" class="post-title">
-                                                        6 reasons why you website 
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post">
-                                                <div class="post-img">
-                                                    <img src="assets/images/blog/img3.png" alt="">
-                                                </div>
-                                                <div class="post-details">
-                                                    <a href="blog-details.html" class="post-title">
-                                                        7 reasons why you website 
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post">
-                                                <div class="post-img">
-                                                    <img src="assets/images/blog/img4.png" alt="">
-                                                </div>
-                                                <div class="post-details">
-                                                    <a href="blog-details.html" class="post-title">
-                                                        8 reasons why you website 
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                                 <div class="newsletter-widget">
                                     <h4 class="title">
                                             NewsLetter
                                     </h4>
-                                    <form action="#">
-                                        <input type="text" class="form-control" placeholder="Enter Email..">
+                                    <form id="newsletter-form" method="POST" action="{% url 'leumas:subscribe-newsletter' %}" style="display: flex; flex-direction: column; gap: 10px;">
+                                        {% csrf_token %}
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Email.." required>
                                         <button type="submit" class="base-btn1">Subscribe</button>
+                                        <div id="newsletter-message" style="font-size: 12px; color: #28a745; margin-top: 5px; display: none;"></div>
                                     </form> 
                                 </div>
                             </div>
@@ -476,22 +256,65 @@
 
 
 	<!-- jquery -->
-	<script src="assets/js/jquery.js"></script>
+	<script src="{% static 'js/jquery.js' %}"></script>
 	<!-- popper -->
-	<script src="assets/js/popper.min.js"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
 	<!-- bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!-- plugin js-->
-	<script src="assets/js/plugin.js"></script>
-	<script src="assets/js/jQuery-plugin-progressbar.js"></script>
+	<script src="{% static 'js/plugin.js' %}"></script>
+	<script src="{% static 'js/jQuery-plugin-progressbar.js' %}"></script>
 	<!-- Typed js -->
-	<script src="assets/js/typed.min.js"></script>
+	<script src="{% static 'js/typed.min.js' %}"></script>
 	<!-- buoyant js -->
-	<script src="assets/js/jquery.buoyant.min.js"></script>
+	<script src="{% static 'js/jquery.buoyant.min.js' %}"></script>
 	<!-- Wow js -->
-	<script src="assets/js/wow.js"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
-	<script src="assets/js/main.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<!-- Newsletter Script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const newsletterForm = document.getElementById('newsletter-form');
+			if (newsletterForm) {
+				newsletterForm.addEventListener('submit', function(e) {
+					e.preventDefault();
+					
+					const formData = new FormData(this);
+					const messageDiv = document.getElementById('newsletter-message');
+					
+					fetch('{% url "leumas:subscribe-newsletter" %}', {
+						method: 'POST',
+						body: formData,
+						headers: {
+							'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+						}
+					})
+					.then(response => response.json())
+					.then(data => {
+						messageDiv.style.display = 'block';
+						if (data.success) {
+							messageDiv.style.color = '#28a745';
+							messageDiv.textContent = '✓ ' + data.message;
+							newsletterForm.reset();
+						} else {
+							messageDiv.style.color = '#dc3545';
+							messageDiv.textContent = '✗ ' + data.message;
+						}
+						setTimeout(() => {
+							messageDiv.style.display = 'none';
+						}, 5000);
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						messageDiv.style.display = 'block';
+						messageDiv.style.color = '#dc3545';
+						messageDiv.textContent = '✗ An error occurred. Please try again.';
+					});
+				});
+			}
+		});
+	</script>
     	
 
 </body>

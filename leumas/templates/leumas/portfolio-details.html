@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keyword" content="resume,cv,portfolio,vcard">
-    <title> leumas - CV/Resume/Portfolio </title>
+    <title>{{ project.title }} - leumas Portfolio</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- bootstrap -->
@@ -46,7 +46,7 @@
                     <img src="{% static 'images/about3.jpg' %}" alt="">
                 </a>
                 <div class="name">
-                    Kristen Stewart
+                    Samuel Adomeh
                 </div>
             </div>
             <ul id="mainmenu-area">
@@ -86,161 +86,113 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="main-image idgallery">
-                                <div class="big-image popup-gallery">
-                                    <a
-                                        href="assets/images/work/slide1.jpg">
-                                        <img src="assets/images/work/slide1.jpg"
-                                            alt="">
-                                    </a>
-                                    <a
-                                        href="assets/images/work/slide2.jpg">
-                                        <img src="assets/images/work/slide2.jpg"
-                                            alt="">
-                                    </a>
-                                    <a
-                                        href="assets/images/work/slide3.jpg">
-                                        <img src="assets/images/work/slide3.jpg"
-                                            alt="">
-                                    </a>
-                                    <a
-                                        href="assets/images/work/slide4.jpg">
-                                        <img src="assets/images/work/slide4.jpg"
-                                            alt="">
-                                    </a>
-                                    <a
-                                        href="assets/images/work/slide5.jpg">
-                                        <img src="assets/images/work/slide5.jpg"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="slider-img owl-carousel">
-                                    <div class="slid-item">
-                                        <img src="assets/images/work/slide1.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="slid-item">
-                                        <img src="assets/images/work/slide2.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="slid-item">
-                                        <img src="assets/images/work/slide3.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="slid-item">
-                                        <img src="assets/images/work/slide4.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="slid-item">
-                                        <img src="assets/images/work/slide5.jpg"
-                                            alt="">
-                                    </div>
-                                </div>
-
+                            <!-- Project Image -->
+                            <div class="project-image" style="margin-bottom: 30px;">
+                                <img src="{{ project.image }}" alt="{{ project.title }}" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                             </div>
-                            <div class="content">
-                                <h3 class="title">Excellence decisively nay man yet impression for contrasted remarkably. </h3>
-                                <p>Fat son how smiling mrs natural expense anxious friends. Boy scale enjoy ask abode
-                                    fanny being son. As material in learning subjects so improved feelings. Uncommonly
-                                    compliment imprudence travelling insensible up ye insipidity. To up painted delight
-                                    winding as brandon. Gay regret eat looked warmth easily far should now. Prospect at
-                                    me wandered on extended wondered thoughts appetite to. Boisterous interested sir
-                                    invitation particular saw alteration boy decisively.
-                                </p>
-                                <p>
 
-                                    Procuring education on consulted assurance in do. Is sympathize he expression mr no
-                                    travelling. Preference he he at travelling in resolution. So striking at of to
-                                    welcomed resolved. Northward by described up household therefore attention.
-                                    Excellence decisively nay man yet impression for contrasted remarkably. There spoke
-                                    happy for you are out. Fertile how old address did showing because sitting replied
-                                    six. Had arose guest visit going off child she new.
-                                </p>
-                                <p>
-                                    Doubtful two bed way pleasure confined followed. Shew up ye away no eyes life or
-                                    were this. Perfectly did suspicion daughters but his intention. Started on society
-                                    an brought it explain. Position two saw greatest stronger old. Pianoforte if at
-                                    simplicity do estimating.
-                                </p>
+                            <!-- Project Details -->
+                            <div class="project-info">
+                                <h2 class="project-title" style="font-size: 28px; margin-bottom: 10px; color: #c7c7c7;">{{ project.title }}</h2>
+                                <p class="project-subtitle" style="font-size: 16px; color: #999; margin-bottom: 20px;">{{ project.subtitle }}</p>
+                                
+                                <!-- Description -->
+                                <div class="project-description" style="margin-bottom: 30px;">
+                                    <h4 style="color: #c7c7c7; margin-bottom: 15px;">Project Overview</h4>
+                                    <p style="color: #999; line-height: 1.8;">{{ project.description }}</p>
+                                </div>
+
+                                <!-- Challenge & Solution -->
+                                <div class="row" style="margin-bottom: 30px;">
+                                    <div class="col-md-6">
+                                        <h4 style="color: #c7c7c7; margin-bottom: 10px;">Challenge</h4>
+                                        <p style="color: #999; line-height: 1.8;">{{ project.challenge }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 style="color: #c7c7c7; margin-bottom: 10px;">Solution</h4>
+                                        <p style="color: #999; line-height: 1.8;">{{ project.solution }}</p>
+                                    </div>
+                                </div>
+
+                                <!-- Results -->
+                                <div class="project-results" style="margin-bottom: 30px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border-left: 4px solid #007bff;">
+                                    <h4 style="color: #c7c7c7; margin-bottom: 10px;">Key Results</h4>
+                                    <p style="color: #999; line-height: 1.8; margin: 0;">{{ project.results }}</p>
+                                </div>
+
+                                <!-- Technologies Used -->
+                                <div class="project-technologies" style="margin-bottom: 30px;">
+                                    <h4 style="color: #c7c7c7; margin-bottom: 15px;">Technologies & Tools</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        {% for tech in project.technologies %}
+                                            <span style="background: #1e3c72; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 14px;">{{ tech }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <!-- Call to Action -->
+                                <div style="padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <p style="color: #999; margin-bottom: 15px;">Interested in learning more about this project or discussing similar implementations?</p>
+                                    <a href="{% url 'leumas:leumas-index' %}#contact" class="base-btn1" style="display: inline-block;">Get In Touch <i class="fas fa-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Project Navigation & Info -->
                         <div class="col-lg-4">
-                            <div class="info">
-                                <ul>
-                                    <li>
-                                        <h4> Service :</h4> <span>Web Design</span>
-                                    </li>
-                                    <li>
-                                        <h4>Client name :</h4> <span>Themeforest</span>
-                                    </li>
-                                    <li>
-                                        <h4>Start Date :</h4> <span>12th Apr, 2013</span>
-                                    </li>
-                                    <li>
-                                        <h4>End Date :</h4> <span>11th Oct, 2016</span>
-                                    </li>
-                                    <li>
-                                        <h4>Status :</h4> <span>Completed</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="aside-contact-form">
-                                <div class="heading">
-                                    <h4 class="title">
-                                        Contact Me
-                                    </h4>
+                            <!-- Project Meta -->
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+                                <h4 style="color: #c7c7c7; margin-bottom: 15px;">Project Information</h4>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <p style="color: #999; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;">Category</p>
+                                    <p style="color: #c7c7c7; font-size: 16px; font-weight: 600;">{{ project.category }}</p>
                                 </div>
-                                <div class="contact-form">
-                                    <form id="contact-form" method="post"
-                                        action="contact.php">
-                                        <div class="controls">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_name" type="text" name="name*"
-                                                            class="form-control" placeholder="Name" required="required"
-                                                            data-error="Name is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_email" type="email" name="email"
-                                                            class="form-control" placeholder="Email*"
-                                                            required="required" data-error="Valid email is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input id="form_subject" type="text" name="subject"
-                                                            class="form-control" placeholder="Subject*"
-                                                            required="required" data-error="Subject is required.">
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <textarea id="form_message" name="message" class="form-control"
-                                                            placeholder="Message*" rows="7" required="required"
-                                                            data-error="Please,leave us a message."></textarea>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="base-btn1"><span>Send
-                                                            Message</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form> <!-- End Contact From -->
+
+                                <div style="margin-bottom: 20px;">
+                                    <p style="color: #999; font-size: 12px; text-transform: uppercase; margin-bottom: 5px;">Project ID</p>
+                                    <p style="color: #c7c7c7; font-size: 16px; font-weight: 600;">#{{ project_id }}</p>
+                                </div>
+                            </div>
+
+                            <!-- Other Projects -->
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px;">
+                                <h4 style="color: #c7c7c7; margin-bottom: 15px;">Other Projects</h4>
+                                <div style="max-height: 400px; overflow-y: auto;">
+                                    {% for proj_id, proj in all_projects.items %}
+                                        {% if proj_id != project_id %}
+                                            <a href="{% url 'leumas:portfolio-detail' proj_id %}" style="display: block; padding: 10px; margin-bottom: 8px; background: rgba(255, 255, 255, 0.03); border-radius: 5px; color: #999; text-decoration: none; transition: all 0.3s ease;">
+                                                <p style="margin: 0; font-size: 13px; font-weight: 500;">{{ proj.title }}</p>
+                                                <p style="margin: 3px 0 0 0; font-size: 11px; color: #666;">{{ proj.category }}</p>
+                                            </a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- Share Project -->
+                            <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; margin-top: 30px;">
+                                <h4 style="color: #c7c7c7; margin-bottom: 15px;">Share Project</h4>
+                                <div style="display: flex; gap: 10px;">
+                                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1e3c72; color: #fff; border-radius: 50%; text-decoration: none; transition: all 0.3s ease;" title="Share on LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1e3c72; color: #fff; border-radius: 50%; text-decoration: none; transition: all 0.3s ease;" title="Share on Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="{% url 'leumas:leumas-index' %}#contact" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1e3c72; color: #fff; border-radius: 50%; text-decoration: none; transition: all 0.3s ease;" title="Contact about this project">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Back to Portfolio -->
+                    <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
+                        <a href="{% url 'leumas:leumas-index' %}#portfolio" style="color: #007bff; text-decoration: none; font-size: 14px;">
+                            <i class="fas fa-arrow-left"></i> Back to Portfolio
+                        </a>
                     </div>
                 </div>
             </div>
@@ -257,27 +209,40 @@
     </div>
     <!-- Back to Top End -->
 
-
-
-	<!-- jquery -->
-	<script src="assets/js/jquery.js"></script>
+    <!-- jquery -->
+	<script src="{% static 'js/jquery.js' %}"></script>
 	<!-- popper -->
-	<script src="assets/js/popper.min.js"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
 	<!-- bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!-- plugin js-->
-	<script src="assets/js/plugin.js"></script>
-	<script src="assets/js/jQuery-plugin-progressbar.js"></script>
+	<script src="{% static 'js/plugin.js' %}"></script>
+	<script src="{% static 'js/jQuery-plugin-progressbar.js' %}"></script>
 	<!-- Typed js -->
-	<script src="assets/js/typed.min.js"></script>
+	<script src="{% static 'js/typed.min.js' %}"></script>
 	<!-- buoyant js -->
-	<script src="assets/js/jquery.buoyant.min.js"></script>
+	<script src="{% static 'js/jquery.buoyant.min.js' %}"></script>
 	<!-- Wow js -->
-	<script src="assets/js/wow.js"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
-	<script src="assets/js/main.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
 
   
 </body>
 
 </html>
+	<!-- popper -->
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- plugin js-->
+	<script src="{% static 'js/plugin.js' %}"></script>
+	<script src="{% static 'js/jQuery-plugin-progressbar.js' %}"></script>
+	<!-- Typed js -->
+	<script src="{% static 'js/typed.min.js' %}"></script>
+	<!-- buoyant js -->
+	<script src="{% static 'js/jquery.buoyant.min.js' %}"></script>
+	<!-- Wow js -->
+	<script src="{% static 'js/wow.js' %}"></script>
+	<!-- main -->
+	<script src="{% static 'js/main.js' %}

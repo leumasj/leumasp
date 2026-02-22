@@ -717,20 +717,28 @@ select:focus {
 .home-section {
   height: 100vh;
   display: flex;
-  align-self: center;
   align-items: center;
+  justify-content: center;
   position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 .home-section .home-content {
   text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+.home-section .home-content .home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .home-section .home-content .home-image img {
   width: 220px;
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  display: inline-block;
+  display: block;
   box-shadow: -4px -4px 10px 0px #393c40, -4px -4px 5px 0px #393c40, 4px 4px 10px 0px #131416, 4px 4px 5px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416;
   -webkit-box-shadow: -4px -4px 10px 0px #393c40, -4px -4px 5px 0px #393c40, 4px 4px 10px 0px #131416, 4px 4px 5px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416;
   -moz-box-shadow: -4px -4px 10px 0px #393c40, -4px -4px 5px 0px #393c40, 4px 4px 10px 0px #131416, 4px 4px 5px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416, inset 0px 0px 0px 0px #393c40, inset 0px 0px 0px 0px #131416;
@@ -742,7 +750,6 @@ select:focus {
   -o-transition: box-shadow 0.3s cubic-bezier(0.79, 0.21, 0.06, 0.81);
   -ms-transition: box-shadow 0.3s cubic-bezier(0.79, 0.21, 0.06, 0.81);
   border: 10px solid #26282b;
-  margin-bottom: 30px;
 }
 .home-section .home-content .heading {
   font-size: 40px;
