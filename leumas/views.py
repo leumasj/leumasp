@@ -3,8 +3,24 @@ from django.views.generic import FormView, TemplateView
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from datetime import datetime, timedelta
 from .forms import ContactForm, NewsletterForm
 from .models import Newsletter
+
+
+def get_dynamic_blog_dates():
+    """Generate dynamic blog post dates within the last 2 weeks"""
+    today = datetime.now()
+    dates = []
+    # Generate 7 dates going back 14 days, spaced out
+    for i in range(7):
+        date = today - timedelta(days=i*2)
+        dates.append(date.strftime('%d %b, %Y'))
+    return dates
+
+
+# Get dynamic dates for blog posts
+_blog_dates = get_dynamic_blog_dates()
 
 # Portfolio projects data
 PORTFOLIO_PROJECTS = {
@@ -389,7 +405,7 @@ SERVICES = {
 BLOG_POSTS = {
     1: {
         'title': 'Kubernetes Security Best Practices: Protecting Your Containerized Applications',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[0],
         'author': 'Sam',
         'category': 'Kubernetes',
         'image': '/static/images/blog/img1.png',
@@ -427,7 +443,7 @@ BLOG_POSTS = {
     },
     2: {
         'title': 'GitOps vs Traditional CI/CD: Which Approach Wins in 2024?',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[1],
         'author': 'Sam',
         'category': 'CI/CD',
         'image': '/static/images/blog/img2.png',
@@ -514,7 +530,7 @@ BLOG_POSTS = {
     },
     3: {
         'title': 'Observability at Scale: Implementing Distributed Tracing with Jaeger',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[2],
         'author': 'Sam',
         'category': 'Observability',
         'image': '/static/images/blog/img3.png',
@@ -567,7 +583,7 @@ BLOG_POSTS = {
     },
     4: {
         'title': 'Infrastructure as Code: Terraform Best Practices for Large Organizations',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[3],
         'author': 'Sam',
         'category': 'Infrastructure',
         'image': '/static/images/blog/img4.png',
@@ -648,7 +664,7 @@ infrastructure/
     },
     5: {
         'title': 'Zero-Downtime Deployments: Strategies and Tools Every DevOps Engineer Should Know',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[4],
         'author': 'Sam',
         'category': 'Deployment',
         'image': '/static/images/blog/img5.png',
@@ -739,7 +755,7 @@ spec:
     },
     6: {
         'title': 'Container Registry Management: Harbor vs Docker Registry vs Artifactory',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[5],
         'author': 'Sam',
         'category': 'Containers',
         'image': '/static/images/blog/img6.png',
@@ -853,7 +869,7 @@ spec:
     },
     7: {
         'title': 'Disaster Recovery and Business Continuity: Building Resilient Cloud Infrastructure',
-        'date': '22 Feb, 2026',
+        'date': _blog_dates[6],
         'author': 'Sam',
         'category': 'Infrastructure',
         'image': '/static/images/blog/img5.png',
