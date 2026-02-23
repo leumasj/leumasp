@@ -24,6 +24,7 @@ urlpatterns = [
     path('service/<int:service_id>/', views.service_detail, name='service-detail'),
     path('blog/<int:blog_id>/', views.blog_detail, name='blog-detail'),
     path('subscribe-newsletter/', views.subscribe_newsletter, name='subscribe-newsletter'),
+    path('download-cv/', views.download_cv, name='download-cv'),
     path('pj', views.index, name='leumas-pj'),
 
 
