@@ -1,0 +1,5 @@
+Thanks for subscribing to the newsletter!
+
+You will receive updates to the email address: {{ email }}.
+
+If you did not subscribe, please ignore this email.

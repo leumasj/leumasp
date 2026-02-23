@@ -1,6 +1,7 @@
 from django import forms
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
 from .models import Newsletter
 
 
@@ -32,13 +33,40 @@ class ContactForm(forms.Form):
     def send(self):
 
         subject, msg = self.get_info()
+        # Owner notification (plain text)
+        owner_subject = f"Contact form: {subject}"
+        context = {
+            'name': self.cleaned_data.get('name').strip(),
+            'email': self.cleaned_data.get('email'),
+            'subject': subject,
+            'message': self.cleaned_data.get('message')
+        }
 
-        send_mail(
-            subject=subject,
-            message=msg,
+        text_body = render_to_string('leumas/emails/contact_received.txt', context)
+        html_body = render_to_string('leumas/emails/contact_received.html', context)
+
+        owner_email = EmailMultiAlternatives(
+            subject=owner_subject,
+            body=text_body,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.RECIPIENT_ADDRESS]
+            to=[settings.RECIPIENT_ADDRESS]
         )
+        owner_email.attach_alternative(html_body, "text/html")
+        owner_email.send(fail_silently=True)
+
+        # Confirmation email to the sender
+        confirm_subject = "Thanks for contacting Samuel Adomeh"
+        confirm_text = render_to_string('leumas/emails/contact_confirm.txt', context)
+        confirm_html = render_to_string('leumas/emails/contact_confirm.html', context)
+
+        confirm_email = EmailMultiAlternatives(
+            subject=confirm_subject,
+            body=confirm_text,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[self.cleaned_data.get('email')]
+        )
+        confirm_email.attach_alternative(confirm_html, "text/html")
+        confirm_email.send(fail_silently=True)
 
 
 class NewsletterForm(forms.ModelForm):

@@ -1235,11 +1235,6 @@
 														{{ preview_blogs.1.date }}
 													</p>
 												</li>
-												<li>
-													<p class="post-by">
-														By, {{ blog.author }}
-													</p>
-												</li>
 											</ul>
 											<a href="{% url 'leumas:blog-detail' 1 %}">
 												<h4 class="title">
@@ -1448,6 +1443,8 @@
 				<!--/.container-->
 			</div>
 			<!-- Contact Area End -->
+
+			{% include 'leumas/_footer.html' %}
 
 		</div>
 	</div>

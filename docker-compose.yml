@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: leumasp-db
+    environment:
+      POSTGRES_DB: ${DB_NAME:-leumasp_db}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - leumasp-network
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: leumasp-web
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             gunicorn --bind 0.0.0.0:8000 --workers 4 --reload leumasp.wsgi:application"
+    environment:
+      DEBUG: ${DEBUG:-False}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      DATABASE_URL: postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@db:5432/${DB_NAME:-leumasp_db}
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-change-in-production}
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      EMAIL_BACKEND: ${EMAIL_BACKEND:-django.core.mail.backends.console.EmailBackend}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER:-}
+      RECIPIENT_ADDRESS: ${RECIPIENT_ADDRESS:-}
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - /app/.venv
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - leumasp-network
+
+  # Optional: Redis for caching
+  redis:
+    image: redis:7-alpine
+    container_name: leumasp-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - leumasp-network
+
+volumes:
+  postgres_data:
+  static_volume:
+
+networks:
+  leumasp-network:
+    driver: bridge
