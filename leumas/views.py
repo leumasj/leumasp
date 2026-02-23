@@ -25,8 +25,181 @@ def get_dynamic_blog_dates():
     return dates
 
 
-# Get dynamic dates for blog posts
-_blog_dates = get_dynamic_blog_dates()
+def get_blog_posts_with_dynamic_dates():
+    """Get blog posts with fresh dynamic dates on each call"""
+    dates = get_dynamic_blog_dates()
+    
+    blog_posts = {
+        1: {
+            'title': 'Setting Up Kubernetes High Availability Clusters',
+            'category': 'Kubernetes',
+            'author': 'Samuel Adomeh',
+            'date': dates[0],
+            'image': '/static/images/blog/img1.png',
+            'excerpt': 'A comprehensive guide to setting up and maintaining highly available Kubernetes clusters across multiple availability zones.',
+            'content': '''
+            <h3>Understanding High Availability</h3>
+            <p>High availability (HA) is a critical requirement for production Kubernetes clusters. In this guide, we explore the key components and best practices for building resilient Kubernetes infrastructure.</p>
+            <h3>Key Components</h3>
+            <ul>
+                <li>Multiple control plane nodes with etcd clustering</li>
+                <li>Load balancing for API server access</li>
+                <li>Persistent volume management</li>
+                <li>Network policies and segmentation</li>
+            </ul>
+            <h3>Implementation Best Practices</h3>
+            <p>We cover deployment strategies, monitoring, and disaster recovery planning to ensure your clusters maintain 99.9% uptime SLA.</p>
+            <h3>Monitoring and Observability</h3>
+            <p>Proper monitoring is essential for maintaining cluster health. Learn how to implement comprehensive monitoring with Prometheus and Grafana.</p>
+            '''
+        },
+        2: {
+            'title': 'GitLab CI/CD Pipelines: From Zero to Hero',
+            'category': 'CI/CD',
+            'author': 'Samuel Adomeh',
+            'date': dates[1],
+            'image': '/static/images/blog/img2.png',
+            'excerpt': 'Master GitLab CI/CD pipelines: creating efficient, scalable automation that enables rapid, reliable deployments.',
+            'content': '''
+            <h3>GitLab CI/CD Overview</h3>
+            <p>GitLab provides powerful built-in CI/CD capabilities that integrate seamlessly with your repository. Learn how to leverage these tools effectively.</p>
+            <h3>Pipeline Structure</h3>
+            <p>We explore the anatomy of a CI/CD pipeline, including stages, jobs, and artifacts management.</p>
+            <h3>Advanced Techniques</h3>
+            <ul>
+                <li>Parallel execution for faster builds</li>
+                <li>Conditional pipelines and rules</li>
+                <li>Caching strategies for performance</li>
+                <li>Integration with Kubernetes for deployment</li>
+            </ul>
+            <h3>Security in CI/CD</h3>
+            <p>Implement security scanning, secret management, and compliance checks within your pipeline.</p>
+            '''
+        },
+        3: {
+            'title': 'Terraform: Infrastructure as Code Best Practices',
+            'category': 'Infrastructure',
+            'author': 'Samuel Adomeh',
+            'date': dates[2],
+            'image': '/static/images/blog/img3.png',
+            'excerpt': 'Learn Terraform best practices for managing cloud infrastructure as code with version control and team collaboration.',
+            'content': '''
+            <h3>Why Infrastructure as Code?</h3>
+            <p>Infrastructure as Code (IaC) enables reproducible, version-controlled infrastructure deployments.</p>
+            <h3>Terraform Fundamentals</h3>
+            <p>We cover providers, resources, variables, and outputs - the building blocks of Terraform configurations.</p>
+            <h3>Module Management</h3>
+            <ul>
+                <li>Creating reusable modules</li>
+                <li>Module composition patterns</li>
+                <li>Remote module registries</li>
+                <li>Dependency management</li>
+            </ul>
+            <h3>State Management</h3>
+            <p>Learn about Terraform state, remote backends, and best practices for team environments.</p>
+            <h3>Advanced Topics</h3>
+            <p>Explore workspaces, dynamic blocks, and other advanced Terraform features for complex infrastructure.</p>
+            '''
+        },
+        4: {
+            'title': 'Docker Container Optimization and Security',
+            'category': 'Containers',
+            'author': 'Samuel Adomeh',
+            'date': dates[3],
+            'image': '/static/images/blog/img4.png',
+            'excerpt': 'Optimize Docker containers for performance, size reduction, and security hardening in production environments.',
+            'content': '''
+            <h3>Container Security Fundamentals</h3>
+            <p>Security is paramount in containerized environments. Learn best practices for secure container deployment and management.</p>
+            <h3>Image Optimization</h3>
+            <ul>
+                <li>Multi-stage builds for smaller images</li>
+                <li>Layer caching optimization</li>
+                <li>Base image selection</li>
+                <li>Minimal container practices</li>
+            </ul>
+            <h3>Runtime Security</h3>
+            <p>Implement resource limits, network policies, and security contexts to harden your containers.</p>
+            <h3>Vulnerability Scanning</h3>
+            <p>Integrate vulnerability scanning in your build pipeline using tools like Trivy and Anchore.</p>
+            '''
+        },
+        5: {
+            'title': 'Observability: Monitoring, Logging, and Tracing',
+            'category': 'Observability',
+            'author': 'Samuel Adomeh',
+            'date': dates[4],
+            'image': '/static/images/blog/img5.png',
+            'excerpt': 'Implement comprehensive observability with Prometheus, ELK Stack, and distributed tracing for production systems.',
+            'content': '''
+            <h3>The Three Pillars of Observability</h3>
+            <p>Metrics, logs, and traces provide comprehensive insight into application behavior and system health.</p>
+            <h3>Metrics with Prometheus</h3>
+            <ul>
+                <li>Setting up Prometheus scrape configs</li>
+                <li>Custom metrics instrumentation</li>
+                <li>Alerting rules and evaluation</li>
+                <li>Long-term metrics storage</li>
+            </ul>
+            <h3>Centralized Logging with ELK</h3>
+            <p>Aggregate logs from multiple sources using Elasticsearch, Logstash, and Kibana.</p>
+            <h3>Distributed Tracing</h3>
+            <p>Implement distributed tracing with tools like Jaeger to understand request flows across microservices.</p>
+            '''
+        },
+        6: {
+            'title': 'AWS Networking: VPC, Subnets, and Security Groups',
+            'category': 'Cloud',
+            'author': 'Samuel Adomeh',
+            'date': dates[5],
+            'image': '/static/images/blog/img6.png',
+            'excerpt': 'Deep dive into AWS networking fundamentals: VPCs, subnets, routing, and security group configurations.',
+            'content': '''
+            <h3>VPC Architecture</h3>
+            <p>Design robust Virtual Private Cloud (VPC) architectures that support high availability and security.</p>
+            <h3>Subnet Planning</h3>
+            <ul>
+                <li>Public vs private subnets</li>
+                <li>Multi-AZ deployment strategies</li>
+                <li>IP addressing and CIDR blocks</li>
+                <li>Network ACLs and security groups</li>
+            </ul>
+            <h3>Connectivity Options</h3>
+            <p>Learn about NAT gateways, VPN connections, and VPC peering for connecting networks.</p>
+            <h3>Security Best Practices</h3>
+            <p>Implement network segmentation, least privilege access, and monitoring for AWS networks.</p>
+            '''
+        },
+        7: {
+            'title': 'DevOps: Culture, Tools, and Practices',
+            'category': 'DevOps',
+            'author': 'Samuel Adomeh',
+            'date': dates[6],
+            'image': '/static/images/blog/img3.png',
+            'excerpt': 'Explore DevOps culture, methodologies, and tools for building high-performing technology teams.',
+            'content': '''
+            <h3>DevOps Mindset</h3>
+            <p>DevOps is more than tools - it\'s a culture of collaboration, automation, and continuous improvement.</p>
+            <h3>Core DevOps Practices</h3>
+            <ul>
+                <li>Infrastructure as Code for reproducibility</li>
+                <li>Continuous Integration and Deployment</li>
+                <li>Automated testing and quality gates</li>
+                <li>Monitoring and incident response</li>
+            </ul>
+            <h3>Team Structure</h3>
+            <p>Explore cross-functional team models and communication strategies for DevOps success.</p>
+            <h3>Metrics and Measurement</h3>
+            <p>Track deployment frequency, lead time, and MTTR to measure DevOps effectiveness.</p>
+            '''
+        }
+    }
+    
+    return blog_posts
+
+
+# Get blog posts with dynamic dates  (call this function in views, not at module load)
+# Note: BLOG_POSTS_TEMPLATE is generated dynamically on each request
 
 # Portfolio projects data
 PORTFOLIO_PROJECTS = {
@@ -407,590 +580,6 @@ SERVICES = {
     },
 }
 
-# Blog posts data
-BLOG_POSTS = {
-    1: {
-        'title': 'Kubernetes Security Best Practices: Protecting Your Containerized Applications',
-        'date': _blog_dates[0],
-        'author': 'Sam',
-        'category': 'Kubernetes',
-        'image': '/static/images/blog/img1.png',
-        'excerpt': 'Comprehensive guide to implementing security best practices in Kubernetes environments.',
-        'content': '''
-        <h3>Introduction</h3>
-        <p>Kubernetes has become the standard for container orchestration, but with great power comes great responsibility. Security in Kubernetes requires attention at multiple layers: cluster security, network policies, pod security, and secrets management.</p>
-        
-        <h3>Key Security Principles</h3>
-        <p><strong>1. Principle of Least Privilege</strong><br/>
-        Always run containers with minimal required permissions. Use Pod Security Policies and SecurityContexts to enforce constraints at the pod level. Avoid running containers as root whenever possible.</p>
-        
-        <p><strong>2. Network Isolation</strong><br/>
-        Implement NetworkPolicies to control traffic between pods. Use service mesh solutions like Istio for advanced network security and traffic management. Encrypt communication between services using mTLS.</p>
-        
-        <p><strong>3. Image Security</strong><br/>
-        Scan container images for vulnerabilities before deployment. Use private container registries and implement image signing. Regularly update base images and dependencies.</p>
-        
-        <h3>Implementing Pod Security Standards</h3>
-        <p>Migrate from deprecated Pod Security Policies to Pod Security Standards. Define restricted, baseline, and unrestricted profiles for your workloads. Enforce these standards at the namespace level.</p>
-        
-        <h3>Secret Management</h3>
-        <p>Never hardcode secrets in images or configuration files. Use dedicated secret management solutions like HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault. Implement encryption for secrets at rest using etcd encryption.</p>
-        
-        <h3>RBAC Configuration</h3>
-        <p>Implement Role-Based Access Control strictly. Create granular roles for different teams and services. Regularly audit role bindings and remove unnecessary permissions.</p>
-        
-        <h3>Monitoring and Auditing</h3>
-        <p>Enable Kubernetes audit logging to track all API requests. Use security monitoring tools like Falco to detect suspicious container behavior. Implement real-time alerts for security events.</p>
-        
-        <h3>Conclusion</h3>
-        <p>Kubernetes security is an ongoing process, not a one-time setup. Regularly update your security practices, stay informed about new vulnerabilities, and conduct security audits periodically. By following these best practices, you can significantly reduce your attack surface and protect your containerized applications.</p>
-        ''',
-        'technologies': ['Kubernetes', 'Security', 'Container', 'RBAC'],
-    },
-    2: {
-        'title': 'GitOps vs Traditional CI/CD: Which Approach Wins in 2024?',
-        'date': _blog_dates[1],
-        'author': 'Sam',
-        'category': 'CI/CD',
-        'image': '/static/images/blog/img2.png',
-        'excerpt': 'Comparing GitOps and traditional CI/CD pipelines to help you choose the right approach for your organization.',
-        'content': '''
-        <h3>Understanding the Paradigm Shift</h3>
-        <p>GitOps represents a significant shift in how we think about deployment and infrastructure management. Instead of pushing changes to systems, GitOps pulls desired state from a Git repository, making Git the single source of truth.</p>
-        
-        <h3>Traditional CI/CD Pipeline Architecture</h3>
-        <p><strong>Push-Based Model:</strong> Code commits trigger CI/CD pipelines that execute tests, build artifacts, and push changes to production. Deployment scripts execute directly on target systems.</p>
-        
-        <p><strong>Workflow:</strong> Developer commits → CI pipeline runs → Deployment triggered → Changes pushed to environment</p>
-        
-        <p><strong>Advantages:</strong></p>
-        <ul>
-        <li>Immediate feedback on failures</li>
-        <li>Direct control over deployment process</li>
-        <li>Well-established tooling (Jenkins, GitLab CI, GitHub Actions)</li>
-        </ul>
-        
-        <h3>GitOps Approach</h3>
-        <p><strong>Pull-Based Model:</strong> Declarative infrastructure and application definitions stored in Git. Controllers (like ArgoCD or Flux) continuously reconcile the actual state with desired state.</p>
-        
-        <p><strong>Workflow:</strong> Developer commits → Git repository updated → Controller detects drift → Automatic reconciliation</p>
-        
-        <p><strong>Advantages:</strong></p>
-        <ul>
-        <li>Git as single source of truth</li>
-        <li>Automatic rollback via Git history</li>
-        <li>Improved security (no direct access to production)</li>
-        <li>Better audit trail and compliance</li>
-        <li>Declarative, idempotent deployments</li>
-        </ul>
-        
-        <h3>Key Differences</h3>
-        <table>
-        <tr>
-        <th>Aspect</th>
-        <th>Traditional CI/CD</th>
-        <th>GitOps</th>
-        </tr>
-        <tr>
-        <td>Deployment Model</td>
-        <td>Push-based</td>
-        <td>Pull-based</td>
-        </tr>
-        <tr>
-        <td>Source of Truth</td>
-        <td>Pipeline configuration</td>
-        <td>Git repository</td>
-        </tr>
-        <tr>
-        <td>Rollback</td>
-        <td>Manual or scripted</td>
-        <td>Git revert + auto-reconcile</td>
-        </tr>
-        <tr>
-        <td>Security</td>
-        <td>Requires deployment credentials</td>
-        <td>No production credentials needed</td>
-        </tr>
-        </table>
-        
-        <h3>Real-World Scenarios</h3>
-        <p><strong>Use Traditional CI/CD when:</strong></p>
-        <ul>
-        <li>Your infrastructure is not declaratively defined</li>
-        <li>You need immediate feedback and tight feedback loops</li>
-        <li>You have mixed on-premise and cloud environments</li>
-        </ul>
-        
-        <p><strong>Use GitOps when:</strong></p>
-        <ul>
-        <li>You're running Kubernetes clusters</li>
-        <li>You value security and audit trails</li>
-        <li>You want predictable, reproducible deployments</li>
-        <li>You need multi-environment deployments</li>
-        </ul>
-        
-        <h3>Conclusion</h3>
-        <p>The answer isn't either/or. Many organizations successfully use both: GitOps for Kubernetes and declarative infrastructure, combined with traditional CI/CD for build and test stages. The key is choosing the right tool for your specific use case.</p>
-        ''',
-        'technologies': ['GitOps', 'CI/CD', 'ArgoCD', 'Flux', 'Kubernetes'],
-    },
-    3: {
-        'title': 'Observability at Scale: Implementing Distributed Tracing with Jaeger',
-        'date': _blog_dates[2],
-        'author': 'Sam',
-        'category': 'Observability',
-        'image': '/static/images/blog/img3.png',
-        'excerpt': 'Master distributed tracing to understand microservices behavior and troubleshoot complex issues.',
-        'content': '''
-        <h3>Why Distributed Tracing Matters</h3>
-        <p>In microservices architectures, a single user request can traverse dozens of services. Traditional logging and metrics fall short in understanding the complete flow. Distributed tracing provides end-to-end visibility into request journeys.</p>
-        
-        <h3>Understanding Jaeger Architecture</h3>
-        <p>Jaeger is an open-source platform for distributed tracing, inspired by Google's Dapper paper. It helps track transactions across services and optimize backend performance.</p>
-        
-        <p><strong>Components:</strong></p>
-        <ul>
-        <li>Jaeger Client: Instrumentation libraries for different languages</li>
-        <li>Jaeger Agent: UDP server receiving spans from clients</li>
-        <li>Jaeger Collector: Processes and stores spans</li>
-        <li>Query Service: Provides API for accessing traces</li>
-        <li>Jaeger UI: Web interface for trace visualization</li>
-        </ul>
-        
-        <h3>Core Concepts</h3>
-        <p><strong>Traces:</strong> Record of a complete request journey</p>
-        <p><strong>Spans:</strong> Individual operations within a trace (e.g., database query, HTTP call)</p>
-        <p><strong>Baggage:</strong> Cross-process data propagation</p>
-        
-        <h3>Implementation Best Practices</h3>
-        <p><strong>1. Instrumentation Strategy</strong><br/>
-        Start with critical paths. Instrument entry points and external service calls first. Use automatic instrumentation where possible (OpenTelemetry collectors).</p>
-        
-        <p><strong>2. Sampling Strategies</strong><br/>
-        Implement intelligent sampling to avoid overwhelming your system. Use probabilistic sampling (1% of requests), rate-limited sampling, or priority-based sampling.</p>
-        
-        <p><strong>3. Context Propagation</strong><br/>
-        Use OpenTelemetry standards for context propagation across services. Ensure trace IDs are passed through HTTP headers, message queues, and async calls.</p>
-        
-        <h3>Advanced Features</h3>
-        <p><strong>Service Dependencies:</strong> Jaeger can generate service dependency graphs from trace data, helping understand your microservices architecture.</p>
-        
-        <p><strong>Performance Analysis:</strong> Identify bottlenecks by analyzing span latencies and critical paths.</p>
-        
-        <p><strong>Error Analysis:</strong> Track errors across service boundaries and identify root causes.</p>
-        
-        <h3>Integration with Other Tools</h3>
-        <p>Jaeger integrates seamlessly with Prometheus for metrics, ELK Stack for logs, and service meshes like Istio. This unified observability stack provides complete insight into your system behavior.</p>
-        
-        <h3>Conclusion</h3>
-        <p>Distributed tracing is essential for operating microservices at scale. Jaeger provides the tools and architecture needed to implement tracing effectively. Start small, measure impact, and scale your observability infrastructure based on real needs.</p>
-        ''',
-        'technologies': ['Jaeger', 'Distributed Tracing', 'OpenTelemetry', 'Observability'],
-    },
-    4: {
-        'title': 'Infrastructure as Code: Terraform Best Practices for Large Organizations',
-        'date': _blog_dates[3],
-        'author': 'Sam',
-        'category': 'Infrastructure',
-        'image': '/static/images/blog/img4.png',
-        'excerpt': 'Learn enterprise-grade Terraform practices for managing complex infrastructure at scale.',
-        'content': '''
-        <h3>Introduction to Infrastructure as Code</h3>
-        <p>Infrastructure as Code (IaC) treats infrastructure the same way we treat application code: versioned, reviewed, tested, and deployed through automated processes. Terraform is the leading declarative IaC tool.</p>
-        
-        <h3>Project Structure for Large Organizations</h3>
-        <p><strong>Recommended Structure:</strong></p>
-        <pre>
-infrastructure/
-├── modules/                 # Reusable components
-│   ├── networking/
-│   ├── compute/
-│   ├── storage/
-│   └── databases/
-├── environments/            # Environment-specific
-│   ├── dev/
-│   ├── staging/
-│   └── production/
-├── global/                  # Shared resources
-└── README.md
-        </pre>
-        
-        <h3>Module Strategy</h3>
-        <p><strong>Benefits of Modules:</strong></p>
-        <ul>
-        <li>Code reusability across projects</li>
-        <li>Consistent resource management</li>
-        <li>Easier maintenance and updates</li>
-        <li>Clear separation of concerns</li>
-        </ul>
-        
-        <p><strong>Module Best Practices:</strong></p>
-        <ul>
-        <li>One responsibility per module</li>
-        <li>Well-documented inputs and outputs</li>
-        <li>Version your modules</li>
-        <li>Provide sensible defaults</li>
-        </ul>
-        
-        <h3>State Management</h3>
-        <p><strong>Remote State:</strong> Always use remote state in production. Store state in S3, Azure Blob Storage, or Terraform Cloud.</p>
-        
-        <p><strong>State Locking:</strong> Enable state locking to prevent concurrent modifications. Use DynamoDB with S3 or native locking in managed backends.</p>
-        
-        <p><strong>Sensitive Data:</strong> Use Terraform variables for secrets, encrypt in transit, and consider using Vault for secrets management.</p>
-        
-        <h3>Workflow and Collaboration</h3>
-        <p><strong>Code Review Process:</strong></p>
-        <ul>
-        <li>Require PR reviews before merging</li>
-        <li>Run terraform plan in CI pipeline</li>
-        <li>Review plan output before approval</li>
-        <li>Implement CODEOWNERS for critical paths</li>
-        </ul>
-        
-        <h3>CI/CD Integration</h3>
-        <p>Use tools like Terraform Cloud, GitLab CI, or GitHub Actions for automated planning and deployment. Implement approval gates before production changes.</p>
-        
-        <h3>Testing and Validation</h3>
-        <p><strong>Tools:</strong></p>
-        <ul>
-        <li>terraform validate: Syntax checking</li>
-        <li>terraform fmt: Code formatting</li>
-        <li>Terratest: Go-based testing framework</li>
-        <li>tflint: Linting for best practices</li>
-        </ul>
-        
-        <h3>Multi-Environment Strategy</h3>
-        <p>Use workspaces or separate stacks for different environments. Keep DRY principle by using modules and variables. Use tfvars files for environment-specific values.</p>
-        
-        <h3>Conclusion</h3>
-        <p>Implementing these Terraform best practices will help your organization build scalable, maintainable, and secure infrastructure. Start with solid foundations and iterate based on team experience.</p>
-        ''',
-        'technologies': ['Terraform', 'Infrastructure as Code', 'AWS', 'Azure', 'GCP'],
-    },
-    5: {
-        'title': 'Zero-Downtime Deployments: Strategies and Tools Every DevOps Engineer Should Know',
-        'date': _blog_dates[4],
-        'author': 'Sam',
-        'category': 'Deployment',
-        'image': '/static/images/blog/img5.png',
-        'excerpt': 'Comprehensive guide to implementing zero-downtime deployment strategies in production environments.',
-        'content': '''
-        <h3>The Challenge of Zero-Downtime Deployments</h3>
-        <p>In modern business, every minute of downtime costs money and damages customer trust. Zero-downtime deployments are no longer optional—they're a requirement. Let's explore the strategies and tools that make this possible.</p>
-        
-        <h3>Deployment Strategies</h3>
-        <p><strong>1. Blue-Green Deployment</strong><br/>
-        Maintain two identical production environments. Deploy new version to inactive environment, test, then switch traffic. Instant rollback available by switching back.</p>
-        
-        <p><strong>2. Canary Deployments</strong><br/>
-        Gradually roll out new version to small percentage of users (e.g., 5%). Monitor metrics closely. If successful, increase percentage incrementally.</p>
-        
-        <p><strong>3. Rolling Deployments</strong><br/>
-        Gradually replace old instances with new ones. Works particularly well with container orchestration like Kubernetes. Maintains service availability throughout.</p>
-        
-        <p><strong>4. Shadow Traffic</strong><br/>
-        Route real production traffic to new version in parallel. Capture and compare responses for validation before switching traffic.</p>
-        
-        <h3>Kubernetes Native Approach</h3>
-        <p><strong>Deployment Strategies in Kubernetes:</strong></p>
-        <pre>
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-app
-spec:
-  replicas: 3
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  template:
-    spec:
-      containers:
-      - name: app
-        image: myapp:v2
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-        </pre>
-        
-        <h3>Database Migrations</h3>
-        <p><strong>Challenges:</strong> Database changes can cause conflicts during deployment.</p>
-        
-        <p><strong>Solutions:</strong></p>
-        <ul>
-        <li>Backward-compatible schema changes</li>
-        <li>Feature flags for new columns/tables</li>
-        <li>Separate deployment phases for schema and application code</li>
-        <li>Use migration tools like Flyway or Liquibase</li>
-        </ul>
-        
-        <h3>Health Checks and Readiness Probes</h3>
-        <p>Proper health checks are critical for zero-downtime deployments.</p>
-        
-        <p><strong>Liveness Probe:</strong> Indicates if service is running. Kubernetes restarts unhealthy containers.</p>
-        
-        <p><strong>Readiness Probe:</strong> Indicates if service is ready for traffic. Kubernetes adds/removes from load balancer based on readiness.</p>
-        
-        <h3>Load Balancer Configuration</h3>
-        <p>Configure connection draining/graceful shutdown timeouts. Ensure load balancer respects health checks. Implement gradual traffic switch during deployments.</p>
-        
-        <h3>Monitoring and Rollback</h3>
-        <p>Monitor error rates, latency, and resource usage during deployment. Implement automatic rollback on critical metric degradation. Keep previous version available for quick rollback.</p>
-        
-        <h3>Tools for Zero-Downtime Deployments</h3>
-        <ul>
-        <li><strong>Kubernetes:</strong> Native rolling updates and readiness probes</li>
-        <li><strong>ArgoCD:</strong> GitOps-based continuous deployment</li>
-        <li><strong>Istio:</strong> Advanced traffic management and canary deployments</li>
-        <li><strong>AWS CodeDeploy:</strong> AWS-native deployment service</li>
-        <li><strong>Spinnaker:</strong> Open-source continuous deployment platform</li>
-        </ul>
-        
-        <h3>Conclusion</h3>
-        <p>Zero-downtime deployments require careful planning and the right tooling. Start with blue-green or rolling deployments, implement robust health checks, and progressively adopt more sophisticated strategies like canary deployments as you gain experience.</p>
-        ''',
-        'technologies': ['Deployment', 'Kubernetes', 'Zero-Downtime', 'CI/CD'],
-    },
-    6: {
-        'title': 'Container Registry Management: Harbor vs Docker Registry vs Artifactory',
-        'date': _blog_dates[5],
-        'author': 'Sam',
-        'category': 'Containers',
-        'image': '/static/images/blog/img6.png',
-        'excerpt': 'Comparing container registry solutions to help you choose the right one for your organization.',
-        'content': '''
-        <h3>Why Container Registry Matters</h3>
-        <p>Container registries are the foundation of container-based deployments. They store, manage, and distribute container images across your infrastructure. Choosing the right registry impacts security, performance, and operational complexity.</p>
-        
-        <h3>Overview of Container Registries</h3>
-        <p><strong>Docker Registry (open-source):</strong></p>
-        <ul>
-        <li>Basic, distribution-focused registry</li>
-        <li>Minimal features</li>
-        <li>Good for simple deployments</li>
-        <li>No built-in UI or ACL system</li>
-        </ul>
-        
-        <p><strong>Harbor (CNCF project):</strong></p>
-        <ul>
-        <li>Enterprise-grade registry with security focus</li>
-        <li>Image scanning and vulnerability detection</li>
-        <li>RBAC and fine-grained access control</li>
-        <li>Replication across registries</li>
-        <li>Built-in web UI</li>
-        <li>Excellent for private enterprise deployments</li>
-        </ul>
-        
-        <p><strong>JFrog Artifactory:</strong></p>
-        <ul>
-        <li>Universal artifact repository</li>
-        <li>Supports Docker, Maven, npm, Helm, etc.</li>
-        <li>Advanced security scanning</li>
-        <li>High availability and disaster recovery</li>
-        <li>Complex pricing for larger deployments</li>
-        </ul>
-        
-        <h3>Feature Comparison</h3>
-        <table>
-        <tr>
-        <th>Feature</th>
-        <th>Docker Registry</th>
-        <th>Harbor</th>
-        <th>Artifactory</th>
-        </tr>
-        <tr>
-        <td>Web UI</td>
-        <td>No</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        </tr>
-        <tr>
-        <td>Security Scanning</td>
-        <td>No</td>
-        <td>Yes (Trivy)</td>
-        <td>Yes</td>
-        </tr>
-        <tr>
-        <td>RBAC</td>
-        <td>Limited</td>
-        <td>Excellent</td>
-        <td>Excellent</td>
-        </tr>
-        <tr>
-        <td>Replication</td>
-        <td>No</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        </tr>
-        <tr>
-        <td>Multi-artifact Support</td>
-        <td>No</td>
-        <td>No</td>
-        <td>Yes</td>
-        </tr>
-        <tr>
-        <td>Cost</td>
-        <td>Free</td>
-        <td>Free (Open Source)</td>
-        <td>Commercial</td>
-        </tr>
-        </table>
-        
-        <h3>Security Considerations</h3>
-        <p><strong>Image Scanning:</strong> Detect vulnerabilities in images before deployment. Harbor includes Trivy scanner; Artifactory uses Xray.</p>
-        
-        <p><strong>Access Control:</strong> Implement role-based access control. Limit push access to CI/CD systems and pull access to deployment systems.</p>
-        
-        <p><strong>Image Signing:</strong> Use Docker Content Trust or Notary to sign images. Verify signatures during deployment.</p>
-        
-        <h3>Implementation Recommendations</h3>
-        <p><strong>For Small Teams/Single Cloud:</strong> Start with Docker Registry or cloud provider's native registry (ECR, ACR, GCR).</p>
-        
-        <p><strong>For Enterprise with Multiple Teams:</strong> Harbor provides excellent security and multi-repository management. Open-source and free.</p>
-        
-        <p><strong>For Complex Artifact Ecosystems:</strong> Artifactory if you need to manage Docker, Maven, npm, Helm, and other artifact types centrally.</p>
-        
-        <h3>Best Practices</h3>
-        <ul>
-        <li>Always use private registries in production</li>
-        <li>Implement image scanning in CI pipeline</li>
-        <li>Use image pull policies (Always, IfNotPresent)</li>
-        <li>Implement garbage collection for unused images</li>
-        <li>Use image tagging strategy (semantic versioning)</li>
-        <li>Replicate images across geographic regions</li>
-        </ul>
-        
-        <h3>Conclusion</h3>
-        <p>The right container registry depends on your organization's size, complexity, and requirements. Harbor is often the sweet spot for enterprise deployments, offering enterprise features without commercial licensing costs.</p>
-        ''',
-        'technologies': ['Container Registry', 'Harbor', 'Docker', 'Security'],
-    },
-    7: {
-        'title': 'Disaster Recovery and Business Continuity: Building Resilient Cloud Infrastructure',
-        'date': _blog_dates[6],
-        'author': 'Sam',
-        'category': 'Infrastructure',
-        'image': '/static/images/blog/img5.png',
-        'excerpt': 'Strategies and implementations for building resilient infrastructure with effective disaster recovery.',
-        'content': '''
-        <h3>Understanding Disaster Recovery and Business Continuity</h3>
-        <p><strong>RTO (Recovery Time Objective):</strong> Maximum acceptable downtime. How quickly must services be restored?</p>
-        
-        <p><strong>RPO (Recovery Point Objective):</strong> Maximum acceptable data loss. How much recent data can you afford to lose?</p>
-        
-        <p>Effective disaster recovery balances cost, complexity, and recovery objectives.</p>
-        
-        <h3>DR Strategies and Costs</h3>
-        
-        <p><strong>1. Backup and Restore (High RPO, High RTO)</strong><br/>
-        Most basic approach. Take regular backups, restore when needed.<br/>
-        RTO: Hours, RPO: Hours<br/>
-        Cost: Low</p>
-        
-        <p><strong>2. Pilot Light (Medium RPO, High RTO)</strong><br/>
-        Core systems run in secondary region, but minimal resources.<br/>
-        RTO: 30-60 minutes, RPO: 15-30 minutes<br/>
-        Cost: Medium</p>
-        
-        <p><strong>3. Warm Standby (Low RPO, Medium RTO)</strong><br/>
-        Scaled-down copy running continuously. Scale up when needed.<br/>
-        RTO: 10 minutes, RPO: Few minutes<br/>
-        Cost: Medium-High</p>
-        
-        <p><strong>4. Hot Standby / Multi-Region (Lowest RPO, Lowest RTO)</strong><br/>
-        Full copy running with traffic split. Instant failover.<br/>
-        RTO: Seconds, RPO: Seconds<br/>
-        Cost: Highest</p>
-        
-        <h3>Database Backup Strategies</h3>
-        
-        <p><strong>Point-in-Time Recovery:</strong></p>
-        <ul>
-        <li>Full backups + transaction logs</li>
-        <li>Enables recovery to any point in time</li>
-        <li>Higher storage requirements</li>
-        </ul>
-        
-        <p><strong>Replication:</strong></p>
-        <ul>
-        <li>Database replication to standby server(s)</li>
-        <li>Synchronous for zero data loss, asynchronous for performance</li>
-        <li>Automatic failover with proper setup</li>
-        </ul>
-        
-        <h3>Application-Level Considerations</h3>
-        
-        <p><strong>Stateless Applications:</strong> Easiest to recover. Deploy new instances, point to recovered data.</p>
-        
-        <p><strong>Stateful Applications:</strong> More complex. Consider:</p>
-        <ul>
-        <li>Session persistence</li>
-        <li>Cache invalidation</li>
-        <li>Message queue durability</li>
-        </ul>
-        
-        <h3>Implementing Multi-Region Architecture</h3>
-        
-        <p><strong>Key Components:</strong></p>
-        <ul>
-        <li>Active-Active: Both regions serve traffic (immediate failover)</li>
-        <li>Global DNS with health checks</li>
-        <li>Replicated data across regions</li>
-        <li>Independent infrastructure in each region</li>
-        </ul>
-        
-        <h3>Testing Your DR Plan</h3>
-        
-        <p><strong>Regular DR Drills:</strong></p>
-        <ul>
-        <li>Schedule quarterly DR tests</li>
-        <li>Document recovery steps and timing</li>
-        <li>Test actual failover processes</li>
-        <li>Train team on disaster scenarios</li>
-        </ul>
-        
-        <h3>Kubernetes-Specific DR</h3>
-        
-        <p><strong>Tools:</strong></p>
-        <ul>
-        <li>Velero: Kubernetes backup and restore</li>
-        <li>Kasten K10: Enterprise Kubernetes data protection</li>
-        <li>cluster-api: Multi-cluster management</li>
-        </ul>
-        
-        <h3>Compliance and Documentation</h3>
-        
-        <ul>
-        <li>Document RTO/RPO for each service</li>
-        <li>Maintain recovery runbooks</li>
-        <li>Track infrastructure dependencies</li>
-        <li>Ensure compliance with regulatory requirements</li>
-        </ul>
-        
-        <h3>Cost Optimization in DR</h3>
-        
-        <ul>
-        <li>Use on-demand instances for warm standby</li>
-        <li>Implement cost-effective backup storage</li>
-        <li>Use spot instances for non-critical failover resources</li>
-        <li>Automated scaling based on load</li>
-        </ul>
-        
-        <h3>Conclusion</h3>
-        <p>Disaster recovery is not a one-time implementation but an ongoing process. Start with clear RTO/RPO objectives, choose appropriate strategies, implement with infrastructure as code, and test regularly. The goal is business continuity—ensuring your services remain available even during adverse events.</p>
-        ''',
-        'technologies': ['Disaster Recovery', 'AWS', 'Kubernetes', 'Business Continuity'],
-    },
-}
-
 
 class ContactView(FormView):
     template_name = 'leumas/index.html'
@@ -1019,10 +608,11 @@ class ContactSuccessView(TemplateView):
 
 
 def index(request):
+    blog_posts = get_blog_posts_with_dynamic_dates()
     context = {
         'all_services': SERVICES,
         'all_projects': PORTFOLIO_PROJECTS,
-        'preview_blogs': {1: BLOG_POSTS.get(1), 2: BLOG_POSTS.get(2), 3: BLOG_POSTS.get(3)},
+        'preview_blogs': {1: blog_posts.get(1), 2: blog_posts.get(2), 3: blog_posts.get(3), 4: blog_posts.get(4)},
     }
     return render(request, 'leumas/index.html', context)
 
@@ -1055,12 +645,14 @@ def services(request):
 
 
 def blog(request):
-    context = {'all_blogs': BLOG_POSTS, 'scroll_to': 'blog'}
+    blog_posts = get_blog_posts_with_dynamic_dates()
+    context = {'all_blogs': blog_posts, 'scroll_to': 'blog'}
     return render(request, 'leumas/index.html', context)
 
 
 def blogs(request):
-    context = {'all_blogs': BLOG_POSTS, 'scroll_to': 'blog'}
+    blog_posts = get_blog_posts_with_dynamic_dates()
+    context = {'all_blogs': blog_posts, 'scroll_to': 'blog'}
     return render(request, 'leumas/index.html', context)
 
 
@@ -1081,15 +673,16 @@ def portfolio_detail(request, project_id):
 
 def blog_detail(request, blog_id):
     """Display details for a specific blog post"""
-    blog = BLOG_POSTS.get(blog_id)
+    blog_posts = get_blog_posts_with_dynamic_dates()
+    blog = blog_posts.get(blog_id)
     if not blog:
-        blogs_list = list(BLOG_POSTS.values())
+        blogs_list = list(blog_posts.values())
         blog = blogs_list[0] if blogs_list else None
     
     context = {
         'blog': blog,
         'blog_id': blog_id,
-        'all_blogs': BLOG_POSTS,
+        'all_blogs': blog_posts,
     }
     return render(request, 'leumas/blog-details.html', context)
 
