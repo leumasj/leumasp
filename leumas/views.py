@@ -1025,7 +1025,8 @@ def works(request):
 
 
 def services(request):
-    return render(request, 'leumas/index.html', {'scroll_to': 'service'})
+    context = {'all_services': SERVICES, 'scroll_to': 'service'}
+    return render(request, 'leumas/index.html', context)
 
 
 def blog(request):
