@@ -294,85 +294,123 @@
 								<h2 class="title">
 									<i class="fas fa-briefcase"></i>My Services
 								</h2>
+								<div class="right-area">
+									<a href="{% url 'leumas:leumas-services' %}" class="link">View All Services</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row justify-content-center">
+					<div class="row">
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 1 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/024-server.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										Cloud Infrastructure & DevOps
-									</h4>
-									<p>
-										AWS, Azure, and GCP infrastructure design, deployment, and management. Kubernetes orchestration, containerization, and cloud-native architecture solutions for enterprise scalability.
-									</p>
+							<a href="{% url 'leumas:service-detail' 1 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/024-server.png' %}" alt="Cloud Infrastructure" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">Cloud Infrastructure & DevOps</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">AWS, Azure & GCP Infrastructure</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 1 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 2 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/062-code-1.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										Web Development
-									</h4>
-									<p>
-										Full-stack web development with React, Vue.js, Django, and Node.js. Responsive design, progressive web apps, and API development with focus on performance and user experience.
-									</p>
+							<a href="{% url 'leumas:service-detail' 2 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/062-code-1.png' %}" alt="Web Development" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">Web Development</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">React, Django & Node.js</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 2 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 3 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/064-vector.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										Mobile App Development
-									</h4>
-									<p>
-										Native and cross-platform mobile development using React Native and Flutter. iOS and Android applications with seamless performance and intuitive user interfaces.
-									</p>
+							<a href="{% url 'leumas:service-detail' 3 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/064-vector.png' %}" alt="Mobile Development" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">CI/CD Pipeline Automation</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">GitLab CI + Jenkins + K8s</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 3 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 4 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/043-analytics.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										CI/CD Pipeline Automation
-									</h4>
-									<p>
-										Jenkins, GitLab CI/CD, and GitHub Actions implementation. Automated testing, continuous deployment, and monitoring for rapid, reliable software releases.
-									</p>
+							<a href="{% url 'leumas:service-detail' 4 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/043-analytics.png' %}" alt="Performance Optimization" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">Performance & Security</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">Infrastructure Hardening</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 4 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 5 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/033-rocket.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										Performance & Security Optimization
-									</h4>
-									<p>
-										Infrastructure security hardening, SSL/TLS implementation, and performance tuning. Database optimization and load balancing for 99.9% uptime SLA compliance.
-									</p>
+							<a href="{% url 'leumas:service-detail' 5 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/033-rocket.png' %}" alt="Mobile Apps" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">Mobile App Development</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">React Native & Flutter</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 5 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
-							<a href="{% url 'leumas:service-detail' 6 %}" class="single-feature wow fadeInUp">
-								<img src="{% static 'images/icon/054-puzzle.png' %}" alt="">
-								<div class="content">
-									<h4 class="title">
-										System Architecture & Consulting
-									</h4>
-									<p>
-										Enterprise-grade system design and technical consulting. Microservices architecture, distributed systems design, and technology stack recommendations for scaling operations.
-									</p>
+							<a href="{% url 'leumas:service-detail' 6 %}" class="gallery-item-content wow fadeInUp">
+								<div class="item-thumbnail">
+									<div class="icon-box" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); padding: 30px; border-radius: 10px; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+										<img src="{% static 'images/icon/054-puzzle.png' %}" alt="System Architecture" style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+									</div>
+									<div class="content-overlay">
+										<div class="content">
+											<h3 style="color: white; margin: 0;">System Architecture & Consulting</h3>
+											<p style="color: white; margin: 5px 0 10px; font-size: 0.9rem;">Enterprise System Design</p>
+											<div class="links">
+												<a href="{% url 'leumas:service-detail' 6 %}" class="link"><i class="fas fa-link"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</a>
 						</div>

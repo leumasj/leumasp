@@ -1013,19 +1013,38 @@ class ContactSuccessView(TemplateView):
 
 
 def index(request):
-    return render(request, 'leumas/index.html')
+    context = {
+        'all_services': SERVICES,
+        'all_projects': PORTFOLIO_PROJECTS,
+        'preview_blogs': {1: BLOG_POSTS.get(1), 2: BLOG_POSTS.get(2), 3: BLOG_POSTS.get(3)},
+    }
+    return render(request, 'leumas/index.html', context)
 
 
 def about(request):
-    return render(request, 'leumas/index.html', {'scroll_to': 'about'})
+    context = {
+        'all_services': SERVICES,
+        'all_projects': PORTFOLIO_PROJECTS,
+        'scroll_to': 'about'
+    }
+    return render(request, 'leumas/index.html', context)
 
 
 def works(request):
-    return render(request, 'leumas/index.html', {'scroll_to': 'project-gallery'})
+    context = {
+        'all_services': SERVICES,
+        'all_projects': PORTFOLIO_PROJECTS,
+        'scroll_to': 'project-gallery'
+    }
+    return render(request, 'leumas/index.html', context)
 
 
 def services(request):
-    context = {'all_services': SERVICES, 'scroll_to': 'service'}
+    context = {
+        'all_services': SERVICES,
+        'all_projects': PORTFOLIO_PROJECTS,
+        'scroll_to': 'service'
+    }
     return render(request, 'leumas/index.html', context)
 
 
