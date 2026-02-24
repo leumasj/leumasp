@@ -21,6 +21,10 @@
 	<!-- stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/multicolor.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/dark-mode.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/form-ui-improvements.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/glassmorphism.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/advanced-interactions.css' %}" />
 	<!-- responsive -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
 </head>
@@ -56,6 +60,9 @@
 				<div class="name wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
 						Samuel Adomeh
 				</div>
+				<button id="dark-mode-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+					<i class="fas fa-moon"></i>
+				</button>
 			</div>
 			<ul id="mainmenu-area">
 				<li class="current">
@@ -1491,6 +1498,8 @@
 			}
 		});
 	</script>
+	<!-- Advanced interactions js - Phase 2 -->
+	<script src="{% static 'js/advanced-interactions.js' %}"></script>
 	
 </body>
 

@@ -1,15 +1,49 @@
-/* 03245e */
+/* Dark Mode Stylesheet - Phase 1 Quick Wins */
+/* Primary Colors: #001232 (background), #4285f4 (accent), #f1f1f1 (text) */
 
-
-body,
-html
+body.dark-mode,
+body.dark-mode html
 {
-    background: #001232;
+    background: #0f1419;
+    color: #e8eaed!important;
+}
+
+body.dark-mode,
+body.dark-mode html
+{
+    background: #0f1419;
     color: #f1f1f1!important;
 }
 
+body.dark-mode .side-menu,
 .side-menu{
     background: #001232!important;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+#dark-mode-toggle:hover {
+    background: rgba(66, 133, 244, 0.1);
+    transform: scale(1.1);
+}
+
+body.dark-mode #dark-mode-toggle i {
+    color: #ffd700;
 }
 h6,
 h5,
@@ -307,3 +341,122 @@ textarea::placeholder
   .side-menu-wrapper .menu-toogle-icon.active i{
       color: #001232!important;
   }
+
+/* Scrollbar Styling for Dark Mode */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #0f1419;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #4285f4;
+    border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #3a76d6;
+}
+
+/* Form Styling Enhancements */
+body.dark-mode .form-control,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #1a1f26 !important;
+    border: 1px solid #4285f4 !important;
+    color: #e8eaed !important;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    background-color: #222a33 !important;
+    border-color: #5b9eff !important;
+    box-shadow: 0 0 10px rgba(66, 133, 244, 0.3) !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888 !important;
+}
+
+/* Link Styling */
+body.dark-mode a {
+    color: #5b9eff;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode a:hover {
+    color: #7baeff;
+    text-decoration: underline;
+}
+
+/* Table Styling */
+body.dark-mode table,
+body.dark-mode .table {
+    background-color: #1a1f26;
+    border-color: #4285f4;
+}
+
+body.dark-mode table thead,
+body.dark-mode .table thead {
+    background-color: #0f1419;
+}
+
+body.dark-mode table tbody tr:hover,
+body.dark-mode .table tbody tr:hover {
+    background-color: #222a33;
+}
+
+/* Code Block Styling */
+body.dark-mode pre,
+body.dark-mode code {
+    background-color: #1a1f26 !important;
+    color: #89d4f9 !important;
+    border: 1px solid #4285f4;
+}
+
+/* Card Styling */
+body.dark-mode .card {
+    background-color: #1a1f26 !important;
+    border-color: #4285f4 !important;
+}
+
+body.dark-mode .card-header {
+    background-color: #0f1419 !important;
+    border-color: #4285f4 !important;
+}
+
+/* Modal Styling */
+body.dark-mode .modal-content {
+    background-color: #1a1f26 !important;
+    border-color: #4285f4 !important;
+}
+
+body.dark-mode .modal-header {
+    border-bottom-color: #4285f4 !important;
+}
+
+body.dark-mode .modal-footer {
+    border-top-color: #4285f4 !important;
+}
+
+/* Badge & Alert Styling */
+body.dark-mode .badge {
+    background-color: #4285f4 !important;
+}
+
+body.dark-mode .alert {
+    background-color: #1a1f26 !important;
+    border-color: #4285f4 !important;
+    color: #e8eaed !important;
+}
+
+/* Smooth Transitions */
+body.dark-mode * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

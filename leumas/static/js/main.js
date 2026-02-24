@@ -344,6 +344,39 @@ $(function ($) {
         var backtoTop = $('.bottomtotop');
         backtoTop.fadeOut(100);
 
+        // Dark Mode Toggle - Phase 1 Quick Win
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+        
+        // Initialize dark mode from localStorage
+        const isDarkMode = localStorage.getItem('dark-mode') === 'enabled';
+        if (isDarkMode) {
+            bodyElement.classList.add('dark-mode');
+            if (darkModeToggle) {
+                darkModeToggle.querySelector('i').classList.remove('fa-moon');
+                darkModeToggle.querySelector('i').classList.add('fa-sun');
+            }
+        }
+        
+        // Dark mode toggle event listener
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', function() {
+                bodyElement.classList.toggle('dark-mode');
+                const icon = darkModeToggle.querySelector('i');
+                
+                if (bodyElement.classList.contains('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        }
+
     });
 
 

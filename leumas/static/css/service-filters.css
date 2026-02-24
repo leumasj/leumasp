@@ -1,0 +1,107 @@
+/* Phase 1: Service Filter Styling */
+
+.service-filter-buttons {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+}
+
+.filter-btn.active {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+}
+
+.dark-mode .filter-btn {
+    background-color: #1a1f26;
+    border-color: #4285f4;
+    color: #e8eaed;
+}
+
+.dark-mode .filter-btn:hover,
+.dark-mode .filter-btn.active {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.filter-btn i {
+    font-size: 0.9rem;
+}
+
+/* Service Item Animation */
+.service-item {
+    animation: fadeIn 0.5s ease;
+}
+
+.service-item.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Filter Buttons */
+@media (max-width: 768px) {
+    .service-filter-buttons {
+        gap: 8px;
+        margin: 20px 0;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .filter-btn i {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-filter-buttons {
+        font-size: 0.8rem;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}

@@ -21,8 +21,13 @@
 	<!-- stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/multicolor.css' %}">
+	<link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
+	<link rel="stylesheet" href="{% static 'css/form-ui-improvements.css' %}">
+	<link rel="stylesheet" href="{% static 'css/service-filters.css' %}">
+	<link rel="stylesheet" href="{% static 'css/glassmorphism.css' %}">
+	<link rel="stylesheet" href="{% static 'css/advanced-interactions.css' %}">
 	<!-- responsive -->
-	<link rel="stylesheet" href="{% static 'css/responsive.css' %}"
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}}">
 </head>
 
 <body>
@@ -48,6 +53,9 @@
 			<div class="name">
 					Kristen Stewart
 			</div>
+			<button id="dark-mode-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+				<i class="fas fa-moon"></i>
+			</button>
 		</div>
 		<ul id="mainmenu-area">
 			<li>
@@ -82,11 +90,28 @@
                 <!-- Services Area Start -->
                 <section class="services-page single-services-area">
                     <div class="container">
+                        <!-- Service Filter Buttons - Phase 1 -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="service-filter-buttons text-center">
+                                    <button class="filter-btn active" data-filter="all">
+                                        <i class="fas fa-th"></i> All Services
+                                    </button>
+                                    {% regroup all_services.values by category as services_by_category %}
+                                    {% for category in services_by_category %}
+                                    <button class="filter-btn" data-filter="{{ category.grouper|lower|slugify }}">
+                                        <i class="fas fa-filter"></i> {{ category.grouper|default:"General" }}
+                                    </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="row">
                             <div class="col-lg-8">
-                                <div class="row">
+                                <div class="row" id="services-container">
                                     {% for service_id, service in all_services.items %}
-                                    <div class="col-lg-6 col-md-6">
+                                    <div class="col-lg-6 col-md-6 service-item" data-category="{{ service.category|lower|slugify|default:'general' }}" data-service-id="{{ service_id }}">
                                         <div class="single-service">
                                             <div class="service-icon">
                                                 <i class="{{ service.icon }}"></i>
@@ -261,6 +286,10 @@
 			}
 		});
 	</script>
+	<!-- service filters js -->
+	<script src="{% static 'js/service-filters.js' %}"></script>
+	<!-- Advanced interactions js - Phase 2 -->
+	<script src="{% static 'js/advanced-interactions.js' %}"></script>
 
 </body>
 
