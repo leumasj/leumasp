@@ -21,6 +21,11 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/multicolor.css' %}">
+	<link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
+	<link rel="stylesheet" href="{% static 'css/form-ui-improvements.css' %}">
+	<link rel="stylesheet" href="{% static 'css/glassmorphism.css' %}">
+	<link rel="stylesheet" href="{% static 'css/advanced-interactions.css' %}">
+	<link rel="stylesheet" href="{% static 'css/portfolio-recommendations.css' %}">
     <!-- responsive -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
@@ -231,23 +236,15 @@
 	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
 	<script src="{% static 'js/main.js' %}"></script>
+	<!-- Phase 3: Portfolio Recommendations -->
+	<script src="{% static 'js/portfolio-recommendations.js' %}"></script>
+	<!-- Phase 2: Advanced Interactions -->
+	<script src="{% static 'js/advanced-interactions.js' %}"></script>
 
-  
+    <script>
+        new WOW().init();
+    </script>
+
 </body>
 
 </html>
-	<!-- popper -->
-	<script src="{% static 'js/popper.min.js' %}"></script>
-	<!-- bootstrap -->
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<!-- plugin js-->
-	<script src="{% static 'js/plugin.js' %}"></script>
-	<script src="{% static 'js/jQuery-plugin-progressbar.js' %}"></script>
-	<!-- Typed js -->
-	<script src="{% static 'js/typed.min.js' %}"></script>
-	<!-- buoyant js -->
-	<script src="{% static 'js/jquery.buoyant.min.js' %}"></script>
-	<!-- Wow js -->
-	<script src="{% static 'js/wow.js' %}"></script>
-	<!-- main -->
-	<script src="{% static 'js/main.js' %}

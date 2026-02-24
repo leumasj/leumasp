@@ -20,8 +20,12 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/multicolor.css' %}">
-    <!-- responsive -->
+	<link rel="stylesheet" href="{% static 'css/multicolor.css' %}">	<link rel="stylesheet" href="{% static 'css/dark-mode.css' %}">
+	<link rel="stylesheet" href="{% static 'css/form-ui-improvements.css' %}">
+	<link rel="stylesheet" href="{% static 'css/service-filters.css' %}">
+	<link rel="stylesheet" href="{% static 'css/glassmorphism.css' %}">
+	<link rel="stylesheet" href="{% static 'css/advanced-interactions.css' %}">
+	<link rel="stylesheet" href="{% static 'css/service-calculator.css' %}">    <!-- responsive -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
 
@@ -173,6 +177,98 @@
                                             <i class="fab fa-upwork"></i> Hire on Upwork
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Calculator -->
+                        <div class="service-calculator">
+                            <div class="calculator-header">
+                                <h3>Service Calculators</h3>
+                                <p class="calculator-subheader">Estimate ROI and project costs to make informed decisions</p>
+                            </div>
+
+                            <div class="calculator-grid">
+                                <!-- ROI Calculator -->
+                                <div data-calculator="roi">
+                                    <div class="calculator-inputs">
+                                        <div class="input-group">
+                                            <label for="roi-investment">Initial Investment</label>
+                                            <input type="range" id="roi-investment" data-key="investment" min="1000" max="100000" step="1000" value="5000">
+                                            <div class="range-value">
+                                                <span class="range-display">$5,000</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="roi-return">Expected Return</label>
+                                            <input type="range" id="roi-return" data-key="expectedReturn" min="1000" max="500000" step="5000" value="25000">
+                                            <div class="range-value">
+                                                <span class="range-display">$25,000</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="roi-timeframe">Timeframe (Months)</label>
+                                            <input type="range" id="roi-timeframe" data-key="timeframe" min="1" max="36" step="1" value="12">
+                                            <div class="range-value">
+                                                <span class="range-display">12</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="roi-risk">Risk Level</label>
+                                            <select id="roi-risk" data-key="riskLevel">
+                                                <option value="low">Low Risk</option>
+                                                <option value="medium" selected>Medium Risk</option>
+                                                <option value="high">High Risk</option>
+                                            </select>
+                                        </div>
+                                        <div class="calculator-actions">
+                                            <button class="calculator-btn primary">Calculate</button>
+                                            <button class="calculator-btn">Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-results"></div>
+                                </div>
+
+                                <!-- Cost Estimator -->
+                                <div data-calculator="cost">
+                                    <div class="calculator-inputs">
+                                        <div class="input-group">
+                                            <label for="cost-scope">Project Scope</label>
+                                            <select id="cost-scope" data-key="projectScope">
+                                                <option value="small">Small Project ($5K)</option>
+                                                <option value="medium" selected>Medium Project ($15K)</option>
+                                                <option value="large">Large Project ($50K)</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="cost-complexity">Complexity</label>
+                                            <select id="cost-complexity" data-key="complexity">
+                                                <option value="simple">Simple</option>
+                                                <option value="moderate" selected>Moderate</option>
+                                                <option value="complex">Complex</option>
+                                                <option value="veryComplex">Very Complex</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="cost-timeline">Timeline (Weeks)</label>
+                                            <input type="range" id="cost-timeline" data-key="timeline" min="1" max="24" step="1" value="8">
+                                            <div class="range-value">
+                                                <span class="range-display">8</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="cost-team">Team Size</label>
+                                            <input type="range" id="cost-team" data-key="teamSize" min="1" max="10" step="1" value="3">
+                                            <div class="range-value">
+                                                <span class="range-display">3 team members</span>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-actions">
+                                            <button class="calculator-btn primary">Calculate</button>
+                                            <button class="calculator-btn">Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-results"></div>
                                 </div>
                             </div>
                         </div>
@@ -602,6 +698,10 @@
 	<script src="{% static 'js/wow.js' %}"></script>
 	<!-- main -->
 	<script src="{% static 'js/main.js' %}"></script>
+	<!-- Phase 3: Service Calculator -->
+	<script src="{% static 'js/service-calculator.js' %}"></script>
+	<!-- Phase 3: Advanced Interactions -->
+	<script src="{% static 'js/advanced-interactions.js' %}"></script>
 
     <script>
         new WOW().init();
